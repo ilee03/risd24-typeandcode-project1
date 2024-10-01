@@ -116,6 +116,7 @@
         @media only screen and (max-width: 1200px) {
             .content-box {
                 flex: 1 1 100%;
+			background-color: yellowgreen;
             }
         }
 
@@ -124,21 +125,16 @@
                 margin-left: 0;
                 width: 100%;
                 padding: 1rem;
+				background-color: plum;
             }
 
             .navigation {
                 position: static;
                 width: 100%;
                 height: auto;
+				background-color: azure;
             }
         }
-
-        @font-face {
-            font-family: 'InterVariable';
-            src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr1LIXA79A3w-5EpSOyN4.woff2') format('woff2');
-            font-weight: 100 900;
-            font-stretch: 75% 125%; /* This indicates that the width axis can be varied */
-}
 
 
 h1 {
@@ -159,7 +155,7 @@ h1:hover {
     <!-- Nav -->
     <nav class="navigation">
         <ul class="navigation_primary">
-            <li><a class="navigation__link" href="What is digital-twin technology?">What is digital-twin technology?</a>
+            <li><a class="navigation__link" href="section1">What is digital-twin technology?</a>
             </li>
             <ul class="secondary">
                 <li><a href="What would you do if you had a copy of yourself?">What would you do if you had a copy of
@@ -187,28 +183,28 @@ h1:hover {
     <!-- Main Content -->
     <main class>
         <div class="content-box">
-            <p><a  href="Copy of Yourself" >Copy of Yourself</a></p>
+            <p><a  href="Copy of Yourself" href="section1">Copy of Yourself</a></p>
 
         </div>
-        <div class="content-box">
+        <div class="content-box" href="section2">
             <p>Types of Twins</p>
         </div>
-        <div class="content-box">
+        <div class="content-box"  href="section3">
             <p>3 Dimensions of Product</p>
         </div>
-        <div class="content-box">
+        <div class="content-box"  href="section4">
             <p>Supply Chain</p>
         </div>
-        <div class="content-box">
+        <div class="content-box" href="section5">
             <p>Kinds of Digital Twins</p>
         </div>
-        <div class="content-box">
+        <div class="content-box" href="section6">
             <p>Organizations</p>
         </div>
-        <div class="content-box">
+        <div class="content-box" href="section7">
             <p>Generative AI/p>
         </div>
-        <div class="content-box">
+        <div class="content-box" href="section8">
             <p>Environmental Sustainability</p>
         </div>
     
