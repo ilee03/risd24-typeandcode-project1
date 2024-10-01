@@ -122,30 +122,6 @@
     }
 }
 
-
-		div {
-			font-size: 40px;
-			animation-name: marquee;
-			animation-duration: 10s;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-			transform: translateX(100%);
-		}
-
-		div:nth-child(even) {
-			animation-direction: reverse;
-			transform: translateX(-100%);
-		}
-
-		@keyframes marquee {
-			0% {
-				transform: translateX(100%);
-			}
-
-			100% {
-				transform: translateX(-100%);
-			}
-		}
 		.responsive {
 			display: block;
 			width: 100%;
