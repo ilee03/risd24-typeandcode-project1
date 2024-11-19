@@ -1,0 +1,596 @@
+/* Add responsive flexbox grid with random box sizes */
+:root {
+    --flow: 5000;
+}
+
+@font-face {
+    font-family: "Flow";
+    src: url("./fonts/FlowVF.ttf");
+}
+@font-face {
+    font-family: "Sen";
+    src: url("./fonts/Sen.ttf"); /* Update the path to your Sen font file */
+}
+
+body {
+    margin: 0;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8cccbe;      
+}
+
+.flex-wrapper {
+    display: flex; /* Flexbox container */
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full height of the screen */
+    width: 100%;  /* Full width of the screen */
+}
+.flow-scroll {
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    font-family: "Flow", sans-serif;
+    font-variation-settings: "VAPR" var(--flow);
+    font-size: clamp(3rem, 8vw, 10rem);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+    margin: 0;
+}
+
+.flow-slider {
+    overflow: hidden;
+    width: 50%;
+    font-family: "Flow";
+    font-variation-settings: "VAPR" 0;
+    font-size: 4.5rem;
+    transition: font-variation-settings .1s;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+    border: 2px solid;
+    letter-spacing: 20%;
+    padding: 2%;
+    border-radius: 50px;
+    height: 700px;
+    background-color: #d8f9f2;
+}
+.box-section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    height: auto;
+    /* width: 100vw; */
+    background-position: center;
+    color: black;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.box-text {
+    font-family: "Flow", sans-serif;
+    font-variation-settings: "VAPR" 0;
+    font-size: 20rem;
+    animation: vaprAnimation 4s infinite alternate;
+    line-height: 1.1em;
+    margin-bottom: 0%;
+    margin: 0%;
+    color: tomato
+}
+
+.box-container-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    padding: 20px;
+    background-color: yellowgreen;
+    border: 1px solid black;
+}
+
+.box-section button {
+    background-color: white;
+    color: black;
+    font-family: "Flow", Arial, sans-serif;
+    font-size: 2.2rem;
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 7px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.box-section button:hover {
+    background-color: black;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.grid-item {
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 5vw, 4rem); /* Responsive font size */
+    color: black;
+    transition: all 0.3s ease;
+    padding: 20px;
+    margin: -1px;
+    font-family: "Sen"; /* Use Sen font here */
+}
+
+.flexbox-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    gap: 9em;
+}
+
+/* containers for sliders */
+.sliders-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sen";
+}
+
+.sliders-container h2 {
+    margin-right: 20%;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: 4%;
+    font-size: 2.5rem;
+    font-family: 'Sen';
+}
+
+h3 {
+    font-family: 'Sen';
+}
+
+/* duck */
+a {
+    position: fixed;
+    bottom: 4%;
+    right: 4%;
+    text-decoration: none;
+    font-size: 2rem;
+    background: yellow;
+    border-radius: 50%;
+    padding: 1% 1.5%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px gray;
+    transition: .5s;
+}
+
+a:hover {
+    background-color: orange;
+}
+
+/* Ensures spacing between new sliders */
+#sliders, #font-size-slider, #letter-spacing-slider {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    justify-content: flex-start;
+}
+
+.range-name, span.min {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.axis-range {
+    width: 60%;
+    /* max-width: 500px;
+    margin: 10px auto; */
+}
+
+.min, .max {
+    font-size: 0.9rem;
+    color: #333;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+.axis-range {
+    width: 50%;                  /* Adjust width of the slider */
+    /* max-width: 500px;            /* Maximum width for the slider */
+    /* margin: 0 auto;              Center the slider horizontally */ 
+}
+
+		.scale {
+			display: flex;
+		}
+        .tab-content#tab1,
+        .tab-content#tab2,
+        .tab-content#tab3,
+        .tab-content#tab4 {
+            display: none; /* Hide all tab content by default */
+        }
+        
+        .tabs-container {
+            width: 100%;
+            background-color: #8ad2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2% 5%;
+        }
+
+		.tab-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 20px;
+			background: #f0f0f0;
+			width: 80%;
+            margin: 4% 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+		}
+		.tab-content {
+			text-align: center;
+			font-size: 1.2rem;
+			color: tomato;
+			padding: 20px;
+		}
+        .tab-content p {
+            font-family: Sen;
+        }
+
+		.tab-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+		}
+		.tab-button {
+            padding: 10px 20px;
+            font-family: 'Sen';
+            cursor: pointer;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: .5s;
+		}
+
+		.tab-button.active {
+			background-color: tomato;
+            color: aliceblue;
+		}
+
+        .tab-button:hover {
+            background-color: yellowgreen;
+            color: aliceblue;
+        }
+        .container {
+			position: relative;
+			width: 100vw;
+			height: 7000px;
+		}
+		video.background {
+			object-fit: cover;
+			z-index: -1;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.container-content {
+			position: sticky;
+			top: 0;
+			width: 100%;
+			height: 100dvh;
+		}
+
+		.content {
+			/* height: 4000px; */
+            background: linear-gradient(0deg, #8ad2ff, #ffec9d);
+			padding: 2% 5%;
+            width: 100%;
+		}
+
+		.flex-wrapper {
+			display: flex;
+            flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+
+		/* Hover effect to switch to FlowVF variable font */
+		.grid-item:hover {
+			background-color: black;
+			color: white;
+			font-family: "Flow", sans-serif; /* Switch to Flow variable font */
+			font-variation-settings: "flow" 0, "VAPR" 5000; /* Control the 'flow' axis of the variable font */
+			animation: vaprAnimation 3s infinite alternate; /* Add continuous animation to VAPR axis */			
+		}
+
+		/* Continuous animation for VAPR axis on hover */
+		@keyframes vaprAnimation {
+			0% {
+				font-variation-settings: "VAPR" 5000;
+			}
+            50% {
+				font-variation-settings: "VAPR" 1000;
+			}
+			95% {
+				font-variation-settings: "VAPR" 0;
+			}
+			100% {
+				font-variation-settings: "VAPR" 0;
+			}
+            
+		}
+
+.grid-item:nth-child(1) { grid-column: 1/3;}
+.grid-item:nth-child(2) { grid-column: 3/5;}
+.grid-item:nth-child(3) { grid-column: 5/7;}
+.grid-item:nth-child(4) { grid-column: 7/9;}
+.grid-item:nth-child(5) { grid-column: span 4; grid-row: span 4;font-size: 20rem;}
+.grid-item:nth-child(11) { grid-column: 5/9; grid-row: span 2; font-size: 1.5rem;}
+.grid-item:nth-child(12) { grid-column: 6/7; grid-row: 3/4;}
+.grid-item:nth-child(13) { grid-column: 7/8; grid-row: 3/4;}
+.grid-item:nth-child(14) { grid-column: 8/9; grid-row: 3/4; }
+.grid-item:nth-child(15) { grid-column: 1/3; grid-row: 6/8; font-size: 7rem;}
+.grid-item:nth-child(16) { grid-column: 3/5; grid-row: 6/8; font-size: 7rem;}
+.grid-item:nth-child(17) { grid-column: 5/7; grid-row: 6/8; font-size: 7rem;}
+.grid-item:nth-child(18) { grid-column: 7/9; grid-row: 6/10; font-size: 10rem;}
+.grid-item:nth-child(19) { grid-column: 1/3; grid-row: 8/10; font-size: 7rem;}
+.grid-item:nth-child(20) { grid-column: 3/5; grid-row: 8/10; font-size: 7rem;}
+.grid-item:nth-child(21) { grid-column: 5/7; grid-row: 8/10; font-size: 7rem;}
+.grid-item:nth-child(22) { grid-column: 1/3; grid-row: 10/11;}
+.grid-item:nth-child(23) { grid-column: 3/5; grid-row: 10/11;}
+.grid-item:nth-child(24) { grid-column: 5/7; grid-row: 10/11;}
+.grid-item:nth-child(25) { grid-column: 7/9; grid-row: 10/11;}
+.grid-item:nth-child(26) { grid-column: 7/8; grid-row: 11/14;}
+.grid-item:nth-child(27) { grid-column: 8/9; grid-row: 11/14;}
+.grid-item:nth-child(28) { grid-column: 5/7; grid-row: 11/14; font-size: 10rem;}
+.grid-item:nth-child(29) { grid-column: 1/2; grid-row: 11/13; }
+.grid-item:nth-child(30) { grid-column: 2/3; grid-row: 11/13; }
+.grid-item:nth-child(31) { grid-column: 3/4; grid-row: 11/13; }
+.grid-item:nth-child(32) { grid-column: 4/5; grid-row: 11/13; }
+.grid-item:nth-child(33) { grid-column: 1/2; grid-row: 13/15; }
+.grid-item:nth-child(34) { grid-column: 2/3; grid-row: 13/15; }
+.grid-item:nth-child(35) { grid-column: 3/4; grid-row: 13/15; }
+.grid-item:nth-child(36) { grid-column: 4/5; grid-row: 13/15; }
+.grid-item:nth-child(37) { grid-column: 5/7; grid-row: 14/15; }
+.grid-item:nth-child(38) { grid-column: 7/9; grid-row: 14/15; }
+
+
+
+/* Media queries for responsive behavior */
+@media (max-width: 768px) {
+    #sliders, #font-size-slider, #letter-spacing-slider {flex-direction: column;}
+    .sliders-container {width: 100%;}
+    .flow-slider {width: 100%;}
+    .axis-range {width: 80%;}
+    .grid-container { flex-direction: column; width: 100%; height: auto; }
+    .grid-item { width: 100%; margin: 0; grid-column: span 8; font-size: 4rem;}
+    .flexbox-container { flex-direction: column; gap: 2em;}
+    .grid-item:nth-child(1) { grid-column: span 8;}
+    .grid-item:nth-child(2) { grid-row: 2/3; grid-column: span 8;}
+    .grid-item:nth-child(3) { grid-row: 3/4; grid-column: span 8;}
+    .grid-item:nth-child(4) { grid-row: 4/5; grid-column: span 8;}
+    .grid-item:nth-child(5) { grid-row: 5/6; grid-column: span 8;font-size: 4rem;}
+    .grid-item:nth-child(6) { grid-row: 6/7; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(7) { grid-row: 7/8; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(8) { grid-row: 8/9; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(9) { grid-row: 9/10; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(10) { grid-row: 10/11; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(11) { grid-row: 11/12; grid-column: span 8;}
+    .grid-item:nth-child(12) { grid-row: 12/13; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(13) { grid-row: 14/15; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(14) { grid-row: 15/16; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(15) { grid-row: 16/17; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(16) { grid-row: 17/18; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(17) { grid-row: 18/19; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(18) { grid-row: 19/20; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(19) { grid-row: 20/21; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(20) { grid-row: 21/22; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(21) { grid-row: 22/23; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(22) { grid-row: 23/24; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(23) { grid-row: 24/25; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(24) { grid-row: 25/26; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(25) { grid-row: 26/27; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(26) { grid-row: 27/28; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(27) { grid-row: 28/29; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(28) { grid-row: 29/30; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(29) { grid-row: 30/31; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(30) { grid-row: 31/32; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(31) { grid-row: 32/33; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(32) { grid-row: 33/34; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(33) { grid-row: 34/35; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(34) { grid-row: 35/36; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(35) { grid-row: 36/37; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(36) { grid-row: 37/38; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(37) { grid-row: 38/39; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(38) { grid-row: 39/40; grid-column: span 8; font-size: 4rem;}
+
+}
+
+@media (max-width: 480px) {
+    .grid-container { flex-direction: column; }
+    .grid-item { width: 100%; margin: 0; }
+}
+
+
+
+
+/* General dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Dark mode styles for .content */
+.dark-content {
+    background-color: #121212; /* Set background color to black */
+    color: #ffffff; /* Set text color to white */
+}
+
+/* Apply dark mode background and text color only */
+.dark-mode .grid-item {
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+}
+.dark-mode .box-container{
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+    border-color: #e8e8e8;
+
+}
+.dark-mode .box-section{
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+    
+}
+.dark-mode .box-section button{
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+    border-color: #e8e8e8;
+
+}
+.dark-mode .tabs-container {
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+}
+.dark-mode .content {
+    background: #121212; /* Optional: darken grid items background for dark mode */
+}
+.dark-mode .flow-slider {
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+    color: white;
+}
+.dark-mode .tab-container {
+    background-color: #121212; /* Optional: darken grid items background for dark mode */
+}
+.dark-mode .box-text {
+    color: #ffffff;
+}
+/* Specific styles for rain container */
+#rain-container {
+    position: fixed; /* Keeps it above all other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with underlying elements */
+    overflow: hidden;
+    z-index: 9999; /* Make sure the rain is above other content */
+}
+
+/* Individual rain drops */
+.rain-drop {
+    position: absolute;
+    width: 2px; /* Line thickness */
+    height: 20px; /* Increased length of rain lines */
+    background: rgba(0, 0, 255, 0.6); /* Blue rain color (not affected by invert) */
+    top: 0;
+    animation: fall 1.2s linear infinite; /* Slightly slower fall animation */
+}
+
+/* Rain animation */
+@keyframes fall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Container for puddles */
+.puddle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with underlying elements */
+    overflow: hidden;
+    z-index: 9999; /* Ensure puddles appear above other content */
+}
+
+/* Individual puddles */
+.puddle {
+    position: absolute;
+    border-radius: 50%; /* Make it an oval shape */
+    animation: puddleAnimation 6s ease-out forwards; /* Increased duration for slower disappearance */
+}
+
+/* Puddle animation */
+@keyframes puddleAnimation {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(11.5); /* Increase size slightly for a subtle effect */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Style for the mouse trail */
+.mouse-trail {
+    position: absolute;
+    border-radius: 50%; /* Make it an oval */
+    opacity: 0.6;
+    pointer-events: none; /* Ensures the trail doesn't interfere with other elements */
+    animation: fadeOut 1.5s forwards; /* Slow down the fade effect */
+}
+
+/* Keyframe for the fading effect */
+@keyframes fadeOut {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+

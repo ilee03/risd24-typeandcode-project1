@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>What is digital-twin technology?</h1>
+<h3>August 26, 2024 | Article</h3>
+<p>A digital twin is a digital replica of a physical object, person, system, or process, contextualized in a digital version of its environment. Digital twins can help many kinds of organizations simulate real situations and their outcomes, ultimately allowing them to make better decisions.</p>
+
+<br> 
+screen size is 800px wide or smaller.</b></p>
+
+<div class="flex-container">
+  <div class="flex-item-left">What would you do if you had a copy of yourself?</div>
+  <div class="flex-item-right">A digital doppelgänger, identical to you in every way, in an accurate digital rendering of your home, workplace, neighborhood, or city? Even better: What if the digital version of you—your digital twin—was impervious to injury, pain, or embarrassment? The mind boggles at the possibilities. Suffice it to say, you’d probably be able to make decisions for yourself with a lot more certainty of the outcome.
+  <br>
+  In business, this heightened degree of certainty is extremely valuable—and emerging digital twins may help deliver it.
+  <br>
+  Put simply, a digital twin is a virtual replica of a physical object, person, or process that can be used to simulate its behavior to better understand how it works in real life. Digital twins are linked to real data sources from the environment, which means that the twin updates in real time to reflect the original version. Digital twins also comprise a layer of behavioral insights and visualizations derived from data. When interconnected within one system, digital twins can create a digital and often immersive environment that replicates and connects every aspect of an organization to optimize simulations, scenario planning, and decision making.
+  <br>
+  Creative product development leaders are increasingly enthusiastic about digital twins. McKinsey analysis indicates the global market for digital-twin technology will grow about 60 percent annually over the next five years, reaching $73.5 billion by 2027.
+  </div>
+
+</div>
+<br>
+<div class="flex-container">
+<div class="flex-item-left">What are different types of digital-twin technology?</div>
+<div class="flex-item-right">There are a few different types of digital twins. First, there’s a product twin, which is a representation of a product. This digital twin can include products at various stages of the life cycle, from initial concept design and engineering through full functionality—meaning you get live, real-time data on a product as if it’s in service.
+<br>
+    Another type of digital twin is a data twin. You probably already have a great example of a data twin in your pocket: Google Maps is a digital twin of the Earth’s surface. It links real-time data on traffic to help optimize your commute.
+<br>
+    Other types of twins include systems twins, which model the interaction between physical and digital processes, including manufacturing processes, end-to-end supply chain management, store operations, and customer journeys. And finally, infrastructure twins represent physical infrastructure such as a highway, a building, or even a stadium.
+<br>    
+    Digital twins have the potential to deliver more agile and resilient operations. And their potential isn’t lost on CEOs: McKinsey research indicates that 70 percent of C-suite technology executives at large enterprises are already exploring and investing in digital twins.    
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>brick-barrier.html</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.flex-parent {
+			display: flex;
+			flex-direction: row;
+			gap: 1px;
+			padding: 1px;
+			background-color: black;
+			width: 100vw;
+			height: 100vh;
+		}
+		.flex-child {
+			flex-grow: 1;
+			background-color: white;
+			transition: flex-grow .5s;
+		}
+		.flex-child:hover {
+			flex-grow: 10;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="flex-parent">
+		<div class="flex-child"></div>
+		<div class="flex-child"></div>
+		<div class="flex-child"></div>
+		<div class="flex-child"></div>
+		<div class="flex-child"></div>
+		<div class="flex-child"></div>
+	</div>
+
+</body>
+</html>

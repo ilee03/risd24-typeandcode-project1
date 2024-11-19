@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Index</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="repeating-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#00cba9" fill-opacity="1" d="M0,128L48,128C96,128,192,128,288,128C384,128,480,128,576,144C672,160,768,192,864,181.3C960,171,1056,117,1152,117.3C1248,117,1344,171,1392,197.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
+    <pre>
+        <img class="responsive" src="images/Flower 1.webp" alt="Flower">        <img class="responsive" src="images/Flower 2.png" alt="Flower 2"> <img class="responsive" src="images/Flower 3.webp" alt="Flower 3"> <img class="responsive" src="images/Flower 4.webp" alt="Flower 4">  <img class="responsive" src="images/Flower 5.webp" alt="Flower 5">  <img class="responsive" src="images/Flower 6.png" alt="Flower 6"> <img class="responsive" src="images/Flower 7.webp" alt="Flower 7"> <img class="responsive" src="images/Flower 8.webp" alt="Flower 8"> <img class="responsive" src="images/Flower 9.webp" alt="Flower 9"> <img class="responsive" src="images/Flower 10.webp" alt="Flower 10"> <img class="responsive" src="images/Flower 11.webp" alt="Flower 11"> <img class="responsive" src="images/Flower 12.webp" alt="Flower 12"> <img class="responsive" src="images/Flower 13.png" alt="Flower 13"> <img class="responsive" src="images/Flower 14.png" alt="Flower 14"> <img class="responsive" src="images/Flower 15.webp" alt="Flower 15"> <img class="responsive" src="images/Flower 16.webp" alt="Flower 16"> <img class="responsive" src="images/Flower 17.webp" alt="Flower 17"> <img class="responsive" src="images/Flower 18.webp" alt="Flower 18"> <img class="responsive" src="images/Flower 19.webp" alt="Flower 19"> <img class="responsive" src="images/Flower 20.webp" alt="Flower 20"> <img class="responsive" src="images/Flower 21.webp" alt="Flower 21"> <img class="responsive" src="images/Flower 22.webp" alt="Flower 22"> <img class="responsive" src="images/Flower 23.webp" alt="Flower 23"> <img class="responsive" src="images/Flower 24.png" alt="Flower 24"> <img class="responsive" src="images/Flower 25.png" alt="Flower 25"> <img class="responsive" src="images/Flower 26.png" alt="Flower 26"> 
+</pre>
+
+
+    <div class="plant-index">
+        <h1>Plant Index</h1>
+    </div>
+        <h2>Archive on Plants & Flowers</h2>
+<script>
+     // JavaScript to repeat the SVG dynamically
+     const container = document.querySelector('.repeating-svg');
+    const svg = container.querySelector('svg');
+    
+    // Duplicate the SVG enough times to fill the screen for horizontal scrolling
+    const repeatCount = 13; // Adjust this as needed
+    for (let i = 1; i < repeatCount; i++) {
+        const clone = svg.cloneNode(true); // Create a copy of the SVG
+        container.appendChild(clone); // Append it to the container
+    }
+</script>
+        
+</body>
+</html>
