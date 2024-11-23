@@ -1,98 +1,57 @@
-@font-face {
-    font-family: "BIZUDP-Bold";
-    src: url("./fonts/BIZUDP-Bold.ttf"); /* Update the path to your Sen font file */
-}
-@font-face {
-    font-family: "BIZUDP-Regular";
-    src: url("./fonts/BIZUDP-Regular.ttf"); /* Update the path to your Sen font file */
-}
-
-
-* {
+/* Reset the default margin and disable body scroll */
+body, html {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-width: 375px;
-    width: 100%;
-    min-height: 100vh;
+    overflow: hidden; /* Disable default scrolling */
+  }
+  
+  /* Wrapper to contain both horizontal and vertical sections */
+  .wrapper {
+    height: 100vh; /* Match viewport height */
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background-color: #01ccaa;
-}
-
-.container {
-    width: 800%;
-    overflow-x: scroll; /* Allow horizontal scrolling */
-    background: linear-gradient(90deg, #ffffff,#ffffff, #000000cc);
-    position: relative;
-    height: 900px;
+  }
+  
+  /* Horizontal scrolling section */
+  .horizontal-scroll {
     display: flex;
-    align-items: flex-end;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    position: relative;
-}
-
-.container {
-    position: relative;
-    height: 100vh; /* Make sure the container takes up the full viewport height */
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    z-index: 10; /* Make sure it appears on top of other elements */
-    color: white;
-}
-
-.overlay h1, .overlay h2 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-.repeating-svg {
-    display: flex; /* Lay out SVGs in a row */
-    height: 35%;
-    gap: -200%;
-}
-
-.repeating-svg svg {
-    width: 1440px; /* Match original SVG width */
-    height: 100%; /* Scale SVG to container height */
-    margin-left: -230px;
-}
-
-
-.plant-index {
-    padding-top: 5%;
-    width: 100%;
+    flex-direction: row;
+    width: 500%; /* Adjust based on the number of horizontal sections */
+    height: 100vh;
+    transition: transform 0.6s ease-in-out; /* Smooth horizontal scrolling */
+  }
+  
+  /* Individual horizontal sections */
+  .horizontal-section {
+    width: 100vw;
+    height: 100vh;
+    flex: none;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #01ccaa;
-}
-
-h1 {
-    font-size: 5rem;
-    font-family: 'BIZUDP-Bold';
-}
-
-h2 {
-    font-family: 'BIZUDP-Regular';
-    padding-bottom: 5%;
-}
-/* Or for responsive images */
-img.responsive {
-    width: 16.5%;   /* Makes the image scale with the container */
-    height: auto;  /* Maintains aspect ratio */
-}
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  /* Background colors for horizontal sections */
+  .horizontal-section:nth-child(1) { background: lightcoral; }
+  .horizontal-section:nth-child(2) { background: lightblue; }
+  .horizontal-section:nth-child(3) { background: lightgreen; }
+  .horizontal-section:nth-child(4) { background: lightpink; }
+  .horizontal-section:nth-child(5) { background: lightgray; }
+  
+  /* Vertical scrolling section (if needed later) */
+  .vertical-scroll {
+    height: auto;
+    overflow-y: scroll;
+  }
+  
+  /* Individual vertical sections */
+  .vertical-section {
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Background colors for vertical sections */
+  .vertical-section:nth-child(1) { background: darkseagreen; }
+  .vertical-section:nth-child(2) { background: darkslateblue; }
+  

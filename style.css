@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 375px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    overflow: scroll;
+    background: linear-gradient(45deg, #ffffff, #ffce77cc);
+    position: relative;
+    height: 900px;
+}
+
+svg {
+    width: 200%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.plant-index {
+    padding: 10% 0;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #01ccaa;
+}
+
+h1 {
+    font-size: 5rem;
+}
