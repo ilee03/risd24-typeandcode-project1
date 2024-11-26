@@ -1,62 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant Index</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Horizontal Scrolling Section -->
-    <div class="horizontal-scroll">
-      <div class="horizontal-section">Horizontal Section 1</div>
-      <div class="horizontal-section">Horizontal Section 2</div>
-      <div class="horizontal-section">Horizontal Section 3</div>
-      <div class="horizontal-section">Horizontal Section 4</div>
-      <div class="horizontal-section">Horizontal Section 5</div>
+    <h1>Plant Index</h1>
+    <h3>Photoperiod Plants & Flowers</h3>
+    <div class="scroll-container">
+        <div class="content">
+            <!-- Section 1 -->
+            <div class="section">
+                <a href="./Plant.html">
+                    <img src="./images/1.png" class="flower-image" alt="Flower 1">
+                </a>
+                <a href="./Plant2.html">
+                    <img src="./images/2.png" class="flower-image" alt="Flower 2">
+                </a>                
+                <img src="./images/3.png" class="flower-image" alt="Flower 3">
+                <img src="./images/4.png" class="flower-image" alt="Flower 4">
+
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <img src="./images/5.png" class="flower-image" alt="Flower 5">
+                <img src="./images/6.png" class="flower-image" alt="Flower 6">
+                <img src="./images/7.png" class="flower-image" alt="Flower 7">
+                <img src="./images/8.png" class="flower-image" alt="Flower 8">
+
+            </div>
+
+            <!-- Section 3-->
+            <div class="section">
+                <img src="./images/9.png" class="flower-image" alt="Flower 9">
+                <img src="./images/10.png" class="flower-image" alt="Flower 10">
+                <img src="./images/11.png" class="flower-image" alt="Flower 11">
+                <img src="./images/12.png" class="flower-image" alt="Flower 12">
+            </div>
+
+            <!-- Section 4-->
+            <div class="section">
+                <img src="./images/13.png" class="flower-image" alt="Flower 13">
+                <img src="./images/14.png" class="flower-image" alt="Flower 14">
+                <img src="./images/15.png" class="flower-image" alt="Flower 15">
+                <img src="./images/16.png" class="flower-image" alt="Flower 16">
+            </div>
+
+            <!-- Section 5-->
+            <div class="section">
+                <img src="./images/17.png" class="flower-image" alt="Flower 17">
+                <img src="./images/18.png" class="flower-image" alt="Flower 18">
+                <img src="./images/19.png" class="flower-image" alt="Flower 19">
+                <img src="./images/20.png" class="flower-image" alt="Flower 20">
+            </div>
+
+            <!-- Section 6-->
+            <div class="section">
+                <img src="./images/21.png" class="flower-image" alt="Flower 21">
+                <img src="./images/22.png" class="flower-image" alt="Flower 22">
+                <img src="./images/23.png" class="flower-image" alt="Flower 23">
+                <img src="./images/24.png" class="flower-image" alt="Flower 24">
+            </div>
+        </div>
     </div>
 
-    <!-- Vertical Scrolling Section (if needed later) -->
-    <div class="vertical-scroll">
-      <div class="vertical-section">Vertical Section 1</div>
-      <div class="vertical-section">Vertical Section 2</div>
-    </div>
-  </div>
+<!-- part/numbers made with chatgpt -->
+    <div class="vertical-section">
+        <h2>What are <br> Photoperiod plants? </h2>
+        <div class="squiggly-divider">
+            <svg viewBox="0 0 200 10" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 5 Q 20 0, 50 5 T 100 5 T 150 5 T 200 5" 
+                      stroke="#391a1b" 
+                      fill="transparent" 
+                      stroke-width="1"/>
+            </svg>
+        </div>
+        <div class="text-box">
+            <p>“Photoperiodism is the response to changes in daylength that enables plants to adapt to seasonal changes in their environment. The best studied example of photoperiodism in plants is flowering, but other responses to daylength include bud dormancy and bulb or tuber initiation.”
+            </p>
+        </div>
+        <br>
+        <br>
+        <img src="./images/plants.png" class="plants" alt="plant" style="width: 70vh; height: auto;">
 
-  <script>
-    const horizontalScroll = document.querySelector('.horizontal-scroll');
-    const totalSections = document.querySelectorAll('.horizontal-section').length;
+        <img src="./images/field.png" class="field" alt="field" style="width: 100vw; height: auto; background-position: bottom center;">
 
-    let scrollPosition = 0; // Track the current scroll position
-    let isScrolling = false; // Prevent continuous scrolling
-
-    // Handle mouse wheel scrolling
-    window.addEventListener('wheel', (event) => {
-      if (isScrolling) return; // Prevent continuous scrolling
-
-      isScrolling = true;
-      
-      // Determine scroll direction
-      if (event.deltaY > 0) {
-        // Scroll down (move to the next section)
-        scrollPosition++;
-      } else {
-        // Scroll up (move to the previous section)
-        scrollPosition--;
-      }
-
-      // Constrain the scroll position within valid bounds
-      scrollPosition = Math.max(0, Math.min(scrollPosition, totalSections - 1));
-
-      // Move the horizontal scroll
-      horizontalScroll.style.transform = `translateX(-${scrollPosition * 100}vw)`;
-
-      // Reset the scrolling flag after animation
-      setTimeout(() => {
-        isScrolling = false;
-      }, 600); // Adjust the time based on your animation speed
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
