@@ -176,7 +176,6 @@ main p, .instructions2 {
   align-items: center;
   justify-content: center;
   margin-left: 25%;
-  
 }
 
 #customers td, #customers th {
@@ -188,10 +187,24 @@ main p, .instructions2 {
 
 #customers tr:hover {background-color: #ddd;}
 
-
+.inner {
+  cursor: url(/project-3/images/gloves2.png), pointer;
+}
 
 table h1 {
   font-size: 6rem;
   padding: 104px 0px 0px 100px;
 
 }
+
+
+.background-image {
+  position: absolute;
+  z-index: -1; /* Place the image behind other elements */
+  top: 40%; /* Adjust the vertical position */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%) rotate(-5deg); /* Center and tilt the image */
+  width: 80vh; /* Adjust size to fit well behind the table */
+  opacity: 0.2; /* Slight transparency for better contrast */
+}
+

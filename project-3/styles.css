@@ -257,7 +257,7 @@ main p, .instructions {
   align-items: center;
   justify-content: center;
   margin-left: 25%;
-  
+  background-color: white;
 }
 
 #customers td, #customers th {
@@ -269,7 +269,55 @@ main p, .instructions {
 
 #customers tr:hover {background-color: #ddd;}
 
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;         
+  background-color: #e0e0f6;      
+  padding: 15vw 10vw 15vw 10vw;           
+  margin: 100px;              
+  border: 1px solid #ddd;    
+  border-radius: 5%;
+  font-family: 'BIZUDP';
+  font-size: 4rem;
+}
 
+.flex-wrapper {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  width: 100%; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  gap: 0;
+  padding: 100px;
+  background-color: #adc160;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  padding: 20px;
+  margin: -1px;
+}
+
+.grid-container:nth-child(1) { grid-column: 1/2;}
+.grid-container:nth-child(2) { grid-column: 2/3;}
+.grid-container:nth-child(3) { grid-column: 3/4;}
+.grid-container:nth-child(4) { grid-column: 7/9;}
+
+
+@media (max-width: 480px) {
+  .grid-container { flex-direction: column; }
+}
 
 /* Keyframes for the shake effect */
 @keyframes shake {

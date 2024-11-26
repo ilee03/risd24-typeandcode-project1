@@ -405,6 +405,7 @@ a:hover {
 .grid-item:nth-child(37) { grid-column: 5/6; grid-row: 14/15; }
 .grid-item:nth-child(38) { grid-column: 6/7; grid-row: 14/15; }
 .grid-item:nth-child(39) { grid-column: 7/8; grid-row: 14/15; }
+.grid-item:nth-child(40) { grid-column: 8/9; grid-row: 14/15; }
 
 
 
@@ -456,6 +457,8 @@ a:hover {
     .grid-item:nth-child(36) { grid-row: 37/38; grid-column: span 8; font-size: 4rem;}
     .grid-item:nth-child(37) { grid-row: 38/39; grid-column: span 8; font-size: 4rem;}
     .grid-item:nth-child(38) { grid-row: 39/40; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(39) { grid-row: 40/41; grid-column: span 8; font-size: 4rem;}
+    .grid-item:nth-child(40) { grid-row: 41/42; grid-column: span 8; font-size: 4rem;}
 
 }
 
