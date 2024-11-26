@@ -49,3 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all flower images
+    const flowerImages = document.querySelectorAll('.flower-image');
+
+    // Add hover event listeners to apply the shake effect
+    flowerImages.forEach(image => {
+        image.addEventListener('mouseover', () => {
+            image.classList.add('shake'); // Add shake class on hover
+        });
+
+        image.addEventListener('mouseout', () => {
+            image.classList.remove('shake'); // Remove shake class when not hovering
+        });
+    });
+});

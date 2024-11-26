@@ -84,6 +84,8 @@ h3 {
 
 .plant-page2 {
   background-color: #fbf6f1;
+  font-family: 'BIZUDP';
+
 }
 
 header {
@@ -163,4 +165,33 @@ main p, .instructions2 {
 
 .instructions2 li {
   margin-bottom: 2%;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'BIZUDP';
+  margin: 5vw;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%;
+  
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+
+
+table h1 {
+  font-size: 6rem;
+  padding: 104px 0px 0px 100px;
+
 }
