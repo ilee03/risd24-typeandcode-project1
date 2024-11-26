@@ -246,130 +246,130 @@ a:hover {
     /* margin: 0 auto;              Center the slider horizontally */ 
 }
 
-		.scale {
-			display: flex;
-		}
-        .tab-content#tab1,
-        .tab-content#tab2,
-        .tab-content#tab3,
-        .tab-content#tab4 {
-            display: none; /* Hide all tab content by default */
-        }
-        
-        .tabs-container {
-            width: 100%;
-            background-color: #8ad2ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2% 5%;
-        }
+.scale {
+    display: flex;
+}
+.tab-content#tab1,
+.tab-content#tab2,
+.tab-content#tab3,
+.tab-content#tab4 {
+    display: none; /* Hide all tab content by default */
+}
 
-		.tab-container {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			padding: 20px;
-			background: #f0f0f0;
-			width: 80%;
-            margin: 4% 0;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-			border-radius: 10px;
-		}
-		.tab-content {
-			text-align: center;
-			font-size: 1.2rem;
-			color: tomato;
-			padding: 20px;
-		}
-        .tab-content p {
-            font-family: Sen;
-        }
+.tabs-container {
+    width: 100%;
+    background-color: #8ad2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 5%;
+}
 
-		.tab-buttons {
-			display: flex;
-			justify-content: center;
-			gap: 20px;
-		}
-		.tab-button {
-            padding: 10px 20px;
-            font-family: 'Sen';
-            cursor: pointer;
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: .5s;
-		}
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: #f0f0f0;
+    width: 80%;
+    margin: 4% 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.tab-content {
+    text-align: center;
+    font-size: 1.2rem;
+    color: tomato;
+    padding: 20px;
+}
+.tab-content p {
+    font-family: Sen;
+}
 
-		.tab-button.active {
-			background-color: tomato;
-            color: aliceblue;
-		}
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tab-button {
+    padding: 10px 20px;
+    font-family: 'Sen';
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: .5s;
+}
 
-        .tab-button:hover {
-            background-color: yellowgreen;
-            color: aliceblue;
-        }
-        .container {
-			position: relative;
-			width: 100vw;
-			height: 7000px;
-		}
-		video.background {
-			object-fit: cover;
-			z-index: -1;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-		.container-content {
-			position: sticky;
-			top: 0;
-			width: 100%;
-			height: 100dvh;
-		}
+.tab-button.active {
+    background-color: tomato;
+    color: aliceblue;
+}
 
-		.content {
-			/* height: 4000px; */
-            background: linear-gradient(0deg, #8ad2ff, #ffec9d);
-			padding: 2% 5%;
-            width: 100%;
-		}
+.tab-button:hover {
+    background-color: yellowgreen;
+    color: aliceblue;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 7000px;
+}
+video.background {
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container-content {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+}
 
-		.flex-wrapper {
-			display: flex;
-            flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-		}
+.content {
+    /* height: 4000px; */
+    background: linear-gradient(0deg, #8ad2ff, #ffec9d);
+    padding: 2% 5%;
+    width: 100%;
+}
 
-		/* Hover effect to switch to FlowVF variable font */
-		.grid-item:hover {
-			background-color: black;
-			color: white;
-			font-family: "Flow", sans-serif; /* Switch to Flow variable font */
-			font-variation-settings: "flow" 0, "VAPR" 5000; /* Control the 'flow' axis of the variable font */
-			animation: vaprAnimation 3s infinite alternate; /* Add continuous animation to VAPR axis */			
-		}
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-		/* Continuous animation for VAPR axis on hover */
-		@keyframes vaprAnimation {
-			0% {
-				font-variation-settings: "VAPR" 5000;
-			}
-            50% {
-				font-variation-settings: "VAPR" 1000;
-			}
-			95% {
-				font-variation-settings: "VAPR" 0;
-			}
-			100% {
-				font-variation-settings: "VAPR" 0;
-			}
-            
-		}
+/* Hover effect to switch to FlowVF variable font */
+.grid-item:hover {
+    background-color: black;
+    color: white;
+    font-family: "Flow", sans-serif; /* Switch to Flow variable font */
+    font-variation-settings: "flow" 0, "VAPR" 5000; /* Control the 'flow' axis of the variable font */
+    animation: vaprAnimation 3s infinite alternate; /* Add continuous animation to VAPR axis */			
+}
+
+/* Continuous animation for VAPR axis on hover */
+@keyframes vaprAnimation {
+    0% {
+        font-variation-settings: "VAPR" 5000;
+    }
+    50% {
+        font-variation-settings: "VAPR" 1000;
+    }
+    95% {
+        font-variation-settings: "VAPR" 0;
+    }
+    100% {
+        font-variation-settings: "VAPR" 0;
+    }
+    
+}
 
 .grid-item:nth-child(1) { grid-column: 1/3;}
 .grid-item:nth-child(2) { grid-column: 3/5;}
