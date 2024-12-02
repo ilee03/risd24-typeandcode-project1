@@ -11,7 +11,7 @@ body {
 }
 
 .scroll-container {
-  display: flex;
+  /* display: flex; */
   overflow-x: auto;
   height: 100vh;
 }
@@ -24,7 +24,7 @@ body {
 .section {
   display: flex; 
   align-items: center; 
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   min-width: 100vw;
   height: 100vh;
   background-color: #e0e0f6;
@@ -87,7 +87,7 @@ h3 {
 }
 
 .vertical-section {
-  display: flex;
+  /* display: flex; */
   flex-direction: column; /* Stack content vertically */
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center all content vertically */
