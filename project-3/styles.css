@@ -123,7 +123,7 @@ h3 {
 }
 
 .inner {
-  cursor: url(/project-3/images/gloves2.png), pointer;
+  cursor: url('/project-3/images/shovel2.png'), pointer !important;
 }
 
 
@@ -299,10 +299,10 @@ main p, .instructions {
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color:none;
   border: 1px solid black;
   text-align: center;
-  display: flex;
+  /* display: flex; */
   box-sizing: border-box;
   transition: all 0.3s ease;
   padding: 20px;
