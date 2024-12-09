@@ -64,3 +64,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll(".section");
+    const navOverlay = document.getElementById("nav-overlay");
+
+    // Get the bottom-most position of the last section
+    const lastSection = sections[sections.length - 1];
+    const rect = lastSection.getBoundingClientRect();
+
+    // Check if the last section is fully out of view
+    if (rect.bottom <= 0) {
+        // All sections are finished; show the nav bar
+        navOverlay.style.opacity = "1";
+        navOverlay.style.pointerEvents = "auto"; // Enable interaction
+    } else {
+        // Sections are still visible; hide the nav bar
+        navOverlay.style.opacity = "0";
+        navOverlay.style.pointerEvents = "none"; // Disable interaction
+    }
+});
+
+
+

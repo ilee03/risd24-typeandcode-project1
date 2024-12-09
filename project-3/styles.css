@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: #e0e0f6;
   cursor: url(/project-3/images/shovel2.png), pointer;
+  width: 100%;
 }
 @font-face {
   font-family: 'BIZUDP';
@@ -50,30 +51,47 @@ body {
   position: sticky; /* Keep the header at the top */
   top: 0;
   width: 100%;
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: inherit; /* Inherit the background color from the body */
   z-index: 1000; /* Ensure it stays on top */
-  transition: background-color 0.5s ease; /* Smooth background transition */
+  padding-top: 20px;
+  /* transition: background-color 0.5s ease; Smooth background transition */
+}
+#nav-overlay {
+  opacity: 0; /* Start fully hidden */
+  pointer-events: none; /* Disable interactions when hidden */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Smooth fade-in/out */
 }
 
 .nav-links {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links li a {
-  text-decoration: none;
   font-family: 'BIZUDP', Arial, sans-serif;
-  font-size: 1.2rem;
-  color: inherit; /* Inherit color from the parent */
-  transition: color 0.5s ease; /* Smooth transition for color */
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #391a1b;
+  transition: color 0.3s ease;
 }
+
+.nav-links li a:hover {
+  color: #adc160;
+}
+
+
 
 h1 {
   top: 0;
@@ -120,7 +138,6 @@ h3 {
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center all content vertically */
   text-align: center;
-  padding: 40px 20px; 
   background-color: #adc160; /* Section background */
 }
 
@@ -303,13 +320,40 @@ main p, .instructions {
   width: 100%; 
 }
 
+header {
+  background-color: #e0e0f6;
+  width: 100%;
+  position: relative;
+  height: 100px;
+}
+
+header img {
+  width: 25%;
+  position: absolute;
+  top: -50%;
+  right: 4%;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto ;
   gap: 0;
   padding: 100px;
   background-color: #adc160;
+  align-items: center;
 }
+
+.grid-container2 {
+  display: grid ;
+  grid-template-columns: auto auto auto auto ;
+  gap: 5rem;
+  padding: 100px;
+  background-color: #adc160;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 
 .grid-container > div {
   background-color:none;
