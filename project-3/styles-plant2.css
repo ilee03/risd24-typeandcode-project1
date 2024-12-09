@@ -85,6 +85,7 @@ h3 {
 .plant-page2 {
   background-color: #fbf6f1;
   font-family: 'BIZUDP';
+  cursor: url('/project-3/images/shovel2.png'), pointer !important;
 
 }
 

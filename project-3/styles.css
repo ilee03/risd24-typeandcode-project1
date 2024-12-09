@@ -3,7 +3,6 @@ body {
   padding: 0;
   background-color: #e0e0f6;
   cursor: url(/project-3/images/shovel2.png), pointer;
-  transition: background-color 0.5s ease; /* Smooth transition for body background color */
 }
 @font-face {
   font-family: 'BIZUDP';
@@ -45,6 +44,35 @@ body {
   max-width: 440px; /* Set a maximum width for larger screens */
   height: auto; /* Maintain aspect ratio */
   /* z-index: 2; Ensure the flower image is above the background */
+}
+
+.site-header {
+  position: sticky; /* Keep the header at the top */
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit; /* Inherit the background color from the body */
+  z-index: 1000; /* Ensure it stays on top */
+  transition: background-color 0.5s ease; /* Smooth background transition */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: inherit; /* Inherit color from the parent */
+  transition: color 0.5s ease; /* Smooth transition for color */
 }
 
 h1 {
@@ -123,7 +151,7 @@ h3 {
 }
 
 .inner {
-  cursor: url('/project-3/images/shovel2.png'), pointer !important;
+  cursor: url('/project-3/images/gloves2.png'), pointer !important;
 }
 
 
@@ -168,21 +196,6 @@ h3 {
   font-family: 'BIZUDP';
 
 }
-
-header {
-  background-color: #e0e0f6;
-  width: 100%;
-  position: relative;
-  height: 100px;
-}
-
-header img {
-  width: 25%;
-  position: absolute;
-  top: -50%;
-  right: 4%;
-}
-
 
 main {
   padding: 7%;
@@ -292,7 +305,7 @@ main p, .instructions {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto ;
+  grid-template-columns: auto auto auto auto ;
   gap: 0;
   padding: 100px;
   background-color: #adc160;
@@ -300,7 +313,6 @@ main p, .instructions {
 
 .grid-container > div {
   background-color:none;
-  border: 1px solid black;
   text-align: center;
   /* display: flex; */
   box-sizing: border-box;
