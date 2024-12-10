@@ -100,20 +100,31 @@ a, button, img {
   color: #adc160;
 }
 
-
-
+/* Default title styling */
 h1 {
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  margin: 0;
-  padding: 20px 20px 5px 20px;
+  font-size: 9rem; /* Default size for larger screens */
+  color: #391a1b;
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
-  font-size: 9rem;
-  color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  margin: 0;
+  padding: 20px 20px 5px 20px;
+  transition: font-size 0.3s ease; /* Smooth transition for resizing */
 }
+
+/* Adjust title for medium screens */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 6rem; /* Shrinks title size for medium-sized screens */
+  }
+}
+
+/* Adjust title for small screens */
+@media (max-width: 480px) {
+  h1 {
+      font-size: 4rem; /* Shrinks title size further for small screens */
+  }
+}
+
 
 h2 {
   top: 0;
@@ -419,4 +430,24 @@ header img {
 /* Shake class for flower images */
 .flower-image.shake {
   animation: shake 0.5s ease-in-out; /* Adjust duration as needed */
+}
+
+
+/* Ensure the plants.png image is responsive */
+.plants {
+  max-width: 100%; /* The image will never exceed the width of its container */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .plants {
+      width: 90%; /* Shrinks to 90% of the viewport width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .plants {
+      width: 80%; /* Shrinks further to 80% of the viewport width on very small screens */
+  }
 }
