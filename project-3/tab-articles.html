@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Articles</title>
+
+	<style>
+		/* Font Import */
+        @font-face {
+            font-family: 'Figtree';
+            src: url(./fonts/Figtree.ttf);
+        }
+        @font-face {
+            font-family: 'Jasmine';
+            src: url(./fonts/JasmineUPC\ Regular.ttf);
+        }
+
+		/* Global Styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+        	/* Navigation Bar */
+		nav {
+			display: flex;
+			justify-content: center;
+			padding: 20px 30px;
+			position: relative;
+			font-size: 20px;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: #db4d40;
+			text-transform: uppercase;
+			margin-left: 20px;
+			transition: color 0.3s;
+			align-items: center;
+		}
+
+		nav a:hover {
+			color: #db4d40;
+			text-decoration: underline;
+		}
+
+
+		/* Parent Container */
+		.flex-parent {
+			display: flex;
+			gap: 1px;
+			padding: 1px;
+			background-color: black;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		/* Child Columns */
+		.flex-child {
+			flex-grow: 1;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			transition: flex-grow 0.5s ease;
+		}
+
+		/* Hover Effect */
+		.flex-child:hover {
+			flex-grow: 10; /* Expand on hover */
+		}
+
+		/* Active Column */
+		.flex-child.active {
+			flex-grow: 15 /* Expanded size for active column */
+		}
+
+		/* Column Background Colors */
+		.flex-child:nth-child(1) {
+			background-color: white; 
+		}
+		.flex-child:nth-child(2) {
+			background-color: #b2b2b2;
+		}
+		.flex-child:nth-child(3) {
+			background-color: #dcd700; 
+		}
+		.flex-child:nth-child(4) {
+			background-color: #f9847a;
+		}
+		.flex-child:nth-child(5) {
+			background-color: #b5e1cc; 
+		}
+		.flex-child:nth-child(6) {
+			background-color: #f2d1cc;
+		}
+
+		/* Column Text */
+		.column-text {
+			writing-mode: vertical-rl; /* Make text run vertically */
+			transform: rotate(180deg); /* Flip text to be readable */
+			font-size: 1.5rem;
+            font-family: 'Figtree';
+			font-weight: bold;
+			color: black;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.5s ease; /* Smooth disappearance */
+		}
+
+		.flex-child.active .column-text {
+			opacity: 0; /* Hide text when active */
+		}
+
+		/* Inner Content (Hidden by Default) */
+		.inner-content {
+			display: none;
+			padding: 20px;
+			text-align: left;
+			position: absolute;
+			top: 5%;
+			left: 20%;
+			transform: translateX(-15%);
+			max-width: 90%;
+			max-height: 90%; /* Constrain height */
+			/* background: rgba(255, 255, 255, 0.9); */
+			border-radius: 10px;
+			/* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+			overflow-y: auto; /* Enable vertical scroll */
+		}
+
+		.flex-child.active .inner-content {
+			display: block; /* Show content when active */
+		}
+
+		/* Typography */
+		h1 {
+            font-family: 'Jasmine';
+            font-size: clamp(3rem, 10vw, 6rem); /* Responsive font size */
+            font-weight: 400;
+            color: #db4d40;
+
+        }
+
+		h2 {
+            font-family: 'Jasmine';
+            font-size: clamp(2rem, 5vw, 2rem); /* Responsive font size */
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #db4d40;
+
+        }
+
+        h3 {
+            font-family: 'Figtree';
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: clamp(1rem, 1vw, 1.5rem); /* Responsive font size */
+            font-family: 'Figtree';
+        }
+        a {
+            color: #db4d40;
+        }
+        .a:hover {
+            color: #a7db40;
+        }
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.flex-parent {
+				flex-direction: column; /* Stack columns vertically */
+			}
+
+			.column-text {
+				writing-mode: horizontal-tb; /* Switch to horizontal text */
+				transform: none; /* Remove rotation for horizontal alignment */
+				font-size: 1.2rem; /* Adjust font size for smaller screens */
+			}
+		}
+	</style>
+</head>
+<body>
+    <nav>
+		<a href="./index.html">Index</a>
+		<a href="./tab-archive.html">Archive</a>
+		<a href="./tab-articles.html">Articles</a>
+		<a href="./tab-plants.html">Plants</a>
+	</nav>
+
+	<!-- Parent Container -->
+	<div class="flex-parent">
+		<div class="flex-child active">
+			<div class="column-text">The Photoperiod: Handling and Causing Stress in Plants</div>
+			<div class="inner-content">
+				<h1>The Photoperiod: Handling <br> and Causing Stress in Plants</h1> <br>
+                <h3>Venja M. Roeber | Thomas Schmülling | Anne Cortleven <br> Dahlem Centre of Plant Sciences (D), Institute of Biology/Applied Genetics, Freie Universität Berlin, <br> Berlin, Germany</h3>
+                <br>
+				<p>The photoperiod, which is the length of the light period in the diurnal cycle of 24 h, is an important environmental signal. Plants have evolved sensitive mechanisms to measure the length of the photoperiod. Photoperiod sensing enables plants to synchronize developmental processes, such as the onset of flowering, with a specific time of the year, and enables them to alleviate the impact of environmental stresses occurring at the same time every year. During the last years, the importance of the photoperiod for plant responses to abiotic and biotic stresses has received increasing attention. In this review, we summarize the current knowledge on the signaling pathways involved in the photoperiod-dependent regulation of responses to abiotic (freezing, drought, osmotic stress) and biotic stresses. A central role of GIGANTEA (GI), which is a key player in the regulation of photoperiod-dependent flowering, in stress responses is highlighted. Special attention is paid to the role of the photoperiod in regulating the redox state of plants. Furthermore, an update on photoperiod stress, which is caused by sudden alterations in the photoperiod, is given. Finally, we will review and discuss the possible use of photoperiod-induced stress as a sustainable resource to enhance plant resistance to biotic stress in horticulture.</p>
+            <br><br>
+            <h2>Introduction</h2>
+            <p>
+                Eukaryotes, including plants, adapt numerous life processes to regular rhythms of light and darkness. Light and dark periods regularly alternate in a daily cycle of approximately 24 h due to the rotation of the Earth around its own axis. The duration of the light period during this 24 h day-night cycle determines the photoperiod, which varies with the season and latitude (Jackson, 2009). Plants synchronize their physiological decisions with the correct time of the year to maximize growth and to produce offspring (Casal et al., 2004). Thus, sensing of and responding to the photoperiod are important plant functions to adapt to their environment.
+
+                Among the most prominent plant responses influenced by the photoperiod are the regulation of flowering time (Carré, 2001; Song et al., 2015), tuberization (Sarkar, 2010), bud setting, and dormancy (Jackson, 2009; Singh et al., 2017). In annual plants, senescence is adjusted by the photoperiod (Serrano-Bueno et al., 2021) and in perennial plants like trees, the growth cessation is influenced by season-dependent photoperiods (Singh et al., 2017). In temperate climate zones but also in tropical regions, the photoperiod is the dominant environmental factor controlling the onset and end of the seasonal growing (Adole et al., 2019). Scent emission from flowers is also under the control of the photoperiod (Hendel-Rahmanim et al., 2007) to mention just a few examples of photoperiod-regulated developmental processes in plants.
+
+                Based on their flowering response to the photoperiod, plants can be classified into three groups: short-day, long-day, and day-neutral plants. This classification is based on the critical day length (CDL), which determines the ability of plants to respond to the photoperiod. Short-day-grown plants flower when the photoperiod is shorter than the CDL, while long-day plants flower only, when the photoperiod is longer than the CDL. Day-neutral plants do not respond to the photoperiod (Jackson, 2009). Besides the CDL, the plant developmental phase determines the ability to sense and subsequently respond to photoperiods. The flowering response of Arabidopsis plants is insensitive to photoperiods during their juvenile phase. Entering the adult phase makes Arabidopsis sensitive to photoperiods enabling responses to floral inducers (Matsoukas, 2014). Taken together, the synchronization of the photoperiod sensing and intrinsic developmental programs or developmental phases with the seasonal photoperiod is essential for the reproduction and survival of plants.
+
+                Photoperiod sensing not only enables plants to synchronize their developmental processes with a specific time of the year but also alleviates the impact of environmental stresses occurring at the same time every year. Recently, the interest in the effect of the photoperiod on the response to abiotic and biotic stresses has grown. For example, the role of shortening of days in cold acclimation to prepare for freezing winter temperatures has been uncovered (Ouellet and Charron, 2013). The photoperiod has also been shown to influence the plants’ resistance to drought stress (Iuchi et al., 2001; Han et al., 2013a) and salt stress (Kim et al., 2013; Park et al., 2016). In addition, increasing evidence suggests that the length of the light period is important for the outcome of plant-pathogen interactions (e.g., Griebel and Zeier, 2008). Thus, photoperiod sensing enables plants to improve their responses to diverse environmental stresses (Figure 1). However, sudden changes in the photoperiod can also result in stress. Although the molecular mechanisms underlying this new abiotic stress form are not yet completely resolved (Nitschke et al., 2016, 2017; Abuelsoud et al., 2020; Frank et al., 2020), experiments revealed that changes in the photoperiod elicit stress reactions in Arabidopsis plants, which resemble responses to pathogen attack (Cortleven et al., 2021). The establishment of systemic acquired resistance (SAR) in plants forms an important defense against future pathogen attacks (Conrath et al., 2006). As photoperiod stress provokes similar effects, this might open new horizons for the use of altered photoperiods as a sustainable tool to alleviate pathogen infections and thereby decrease yield losses in horticulture. In the following chapters, we will address the above-mentioned topics in more detail.
+            </p>
+            <br><br>
+            <h2>Molecular Mechanisms Involved in the Perception of Light and the Photoperiod</h2>
+            <p>
+                The perception of and response to photoperiods in plants require a sensing mechanism, which involves the detection of light (via photoreceptors or chloroplasts) and the measurement of time (via the circadian clock) (Jackson, 2009; Serrano-Bueno et al., 2021).<br><br>
+
+                Light perception by photoreceptors and chloroplasts provides plants with comprehensive information concerning their surrounding light environment, such as quality (spectral composition, direction), quantity, intensity, and duration of incoming irradiation (Figure 1). In Arabidopsis thaliana, five photoreceptor families sense the light from different parts of the solar light spectrum: red/far-red light is detected by phytochromes (phyA to phyE). Blue light is perceived by cryptochromes (CRY1, CRY2, CRY3), phototropins (PHOT1, PHOT2), and F-box containing flavin-binding proteins ZEITLUPE (ZTL) and FLAVIN-BINDING KELCH REPEAT F-BOX1 (FKF1)/LOV KELCH PROTEIN2 (LKP2). UV light is sensed by the UVR8 photoreceptor (for review, see Sanchez et al., 2020; Roeber et al., 2021). All of the above-mentioned photoreceptor families are involved in the light entrainment of the circadian clock.<br><br>
+
+                Besides the photoreceptors, chloroplasts operate as plant light sensors and respond to different photoperiods by altering their ultrastructure (Lepisto and Rintamaki, 2012). Chloroplasts of plants grown under long days exhibit smaller grana stacks and increased chlorophyll content. These features correspond to structural and photosynthetic characteristics typical of sun plants (Walters and Horton, 1995). Redox signals arising from chloroplasts determine the light intensity-dependent acclimation of plants (Pfannschmidt et al., 2009). Which signaling mechanisms are involved in the photoperiodic-dependent development of chloroplasts remains to be resolved. The redox state of the photosynthetic electron transport chain, ROS metabolism, and chloroplast-to-nucleus retrograde signaling are only few examples of possible pathways involved, all acting independent of the photoreceptors (for review, see Lepisto and Rintamaki, 2012; Feng et al., 2016). Besides the chloroplast ultrastructure, the photoperiod regulates the photosynthate partitioning to starch and the amount of carbohydrate (C) stored in chloroplasts (Zeeman et al., 2007). Under conditions where less C is available such as short photoperiods, a larger proportion of the fixed C is allocated into starch (Smith and Stitt, 2007). During the night the near-linear starch degradation is slowed down as compared to long-day-grown plants. This results in an almost but not completely exhausted starch content at dawn preventing C-starvation or C-excess at the end of the night period (Stitt and Zeeman, 2012; Moraes et al., 2019). This pattern of C-mobilization is robust across different photoperiods (Stitt and Zeeman, 2012; Moraes et al., 2019). Also here, the exact molecular mechanisms controlling the formation of starch under various photoperiods are not known, but possible feedback inhibition from the carbohydrate metabolism, redox regulation, transcriptional control of chloroplast enzymes, and circadian regulation might play a role.<br><br>
+
+                The circadian clock enables plants to measure time by an endogenous time-keeping mechanism (Hsu and Harmer, 2014; Figure 2). The clock is set through daily entrainment, especially by light and temperature, in order to adjust the internal rhythm (McClung, 2006). In Arabidopsis thaliana, the circadian clock consists of multiple interlocked transcription-translation feedback loops (Hsu and Harmer, 2014). The MYB-domain transcription factor genes CIRCADIAN CLOCK ASSOCIATED1 (CCA1) and LATE ELONGATED HYPOCOTYL (LHY) are expressed in the morning (Schaffer et al., 1998; Wang and Tobin, 1998) and repress the expression of TIMING OF CAB EXPRESSION1 (TOC1) during the day (Alabadi et al., 2001). In turn, TOC1 represses the transcription of CCA1 and LHY (Gendron et al., 2012). Late at night, TOC1 transcription is down-regulated by an Evening Complex (EC), which is composed of three proteins: EARLY FLOWERING3 (ELF3), ELF4, and LUX ARRHYTHMO (LUX). This down-regulation enables transcription of LHY and CCA1 to resume the following dawn. PSEUDO-RESPONSE REGULATOR9 (PRR9), PRR7, and PRR5 are expressed in consecutive waves throughout the day and repress CCA1 and LHY expression (Nakamichi et al., 2012). Additional rhythmically expressed transcriptional activators, such as REVEILLE4 (RVE4), RVE6, and RVE8, the LIGHT-REGULATED WD1 (LWD1) and LWD2 proteins, and the transcription factors NIGHT LIGHT-INDUCIBLE AND CLOCK-REGULATED GENE1 (LNK1) and LNK2 also contribute to the clock function (Rawat et al., 2011; Rugnone et al., 2013). The circadian clock contributes to the plants’ ability to respond to various environmental stresses but there is also a reciprocal influence of abiotic stresses on the clock function. More information about this can be found in the reviews of Sanchez et al. (2011), Kiełbowicz-Matuk and Czarnecka (2014), Grundy et al. (2015), Seo and Mas (2015), and Sharma et al. (2021). A novel webtool to investigate the transcriptional networks regulated by light and the circadian clock has been launched recently (de los Reyes et al., 2020). With ATTRACTOR (Arabidopsis Thaliana TRanscriptionAl Circadian neTwORk1), target genes of circadian regulators can be identified. This might contribute to a better understanding of the interaction between the circadian clock and plant responses to environmental stresses.<br><br>
+            </p>
+            <p>
+                One of the circadian clock-controlled genes that have a crucial role in the photoperiod sensing mechanism is GIGANTEA (GI) (Fowler et al., 1999). It encodes a large single-gene encoded protein with a chaperone activity (Cha et al., 2017). Upon blue light perception, the stability of the F-box protein ZEITLUPE (ZTL) improves due to interaction with GI. ZTL is an evening-phased E3 ubiquitin ligase targeting the clock components TOC1 and PRR5 for proteasomal degradation (Mas et al., 2003; Kiba et al., 2007). GI protein abundance peaks in the evening, thereby maintaining ZTL abundance high. Consequently, high amplitude oscillations of TOC1 and PRR5 are sustained (Kim et al., 2007). This reinforces the entrainment of the clock resulting in the correct setting of the phase of clock output genes such as CONSTANS (CO), encoding a central protein in photoperiod-dependent flowering (Suarez-Lopez et al., 2001; Shim et al., 2017). GI also interacts with FKF1 upon blue light perception causing the degradation of CYCLING DOF FACTOR1 (CDF1), which is a transcriptional repressor of CO (Figure 2; Sawa et al., 2007). The synchronization of the correct timing of protein stabilization during long days with the circadian-regulated expression of FKF1, GI, and CDF1 is essential for photoperiodic responses, such as flowering. Interesting to mention is that the CO-FT-GI-CDF hub is conserved among distantly related flowering plants (Serrano-Bueno et al., 2021).<br><br>
+
+                GI also regulates the maturation of miR172 (Jung et al., 2007), which targets APETALA2 (AP2) and the AP2-like genes TARGET OF EAT1 (TOE1), TOE2, TOE3, SCHLAFMÜTZE (SMZ), and SCHNARCHZAPFEN (SNZ) (Figure 2). The miR172-mediated posttranscriptional downregulation of these floral repressors regulates flowering time and floral development in the shoot apical meristem (Mathieu et al., 2009) depending on the age of the plants (Aukerman and Sakai, 2003). In addition, GI controls the circadian clock-mediated photoperiod sensing together with EARLY FLOWERING3 (ELF3). In their absence, the circadian clock fails to properly respond to light signals, resulting in the breakdown of the photoperiod sensing mechanism (Anwer et al., 2020). <br><br>
+
+                GI plays not only a central role in the photoperiod sensing mechanism but is also involved in mediating the impact of the photoperiod in response to diverse stresses (Figure 2), e.g., drought, oxidative, osmotic, and cold stress (Cao et al., 2005; Fornara et al., 2015), as will be outlined further below. <br><br>
+            </p>
+                <h2>The Photoperiod Influences Responses to Abiotic and Biotic Stresses</h2>
+                <h3>Photoperiod and Freezing Tolerance</h3>
+            <p>
+                One of the best-known stress tolerances depending on the photoperiod is freezing tolerance (Figure 3A). The shortening of day length sensed by plants in autumn anticipates the effect of colder temperatures in winter and causes an increased freezing tolerance (Lee and Thomashow, 2012). For example, red-osier dogwood (Cornus sericea) responds to a shortening of the photoperiod by a decrease of the stem water content, which results in an increased freezing tolerance (Karlson et al., 2003). In hybrid aspen, the phyA-mediated apical bud formation under short days is the main switch turning metabolism from vegetative growth to dormancy and inducing freezing tolerance (Welling et al., 2002).<br><br>
+
+                Increased freezing tolerance caused by shortening of the photoperiod also occurs in Arabidopsis thaliana. Geographical distant accessions of Arabidopsis exhibit differences in freezing tolerance, which can be related to the photoperiod conditions they are geographically exposed to (Alonso-Blanco et al., 2005). The C-repeat/dehydration-responsive element-binding factor (CBF/DREB) signaling cascade is the central molecular mechanism mediating these differences in response to day length. Cold temperatures stimulate the CBF genes resulting in the induction of COLD-REGULATED (COR) genes leading to freezing tolerance (Thomashow, 2010; Pareek et al., 2017). Under long days, the CBF regulon is repressed by phyB, PHYTOCHROME INTERACTING FACTOR4 (PIF4), and PIF7, which causes less freezing tolerance. Shortening of the days during autumn relieves this repression causing an increased expression of the CBF genes, thereby preparing plants for upcoming colder temperatures (Figure 3A; Lee and Thomashow, 2012). <br><br>
+
+                Among the components involved in photoperiodic flowering, the GI-CDF module regulates also freezing tolerance in Arabidopsis (Fornara et al., 2015). GI expression is induced by cold (Fowler and Thomashow, 2002; Cao et al., 2005) and many cold-regulated genes in Arabidopsis are co-regulated by GI and CDFs (Figure 3A). In gi-100 mutants, mRNA of COR genes was present at higher levels than in wild type correlating with enhanced expression of CDF1, CDF2, CDF3 and CDF5 and increased freezing and oxidative stress tolerance. Consequently, this increase in COR gene expression was suppressed in gi-100 cdf1235 mutants (Fornara et al., 2015). In contrast, Cao et al. (2005) found that gi-3 mutants are hypersensitive to freezing. As no differences were found in the transcript levels of CBF genes upon cold stress, it was concluded that GI acts in a CBF-independent manner to promote freezing tolerance by altering the carbohydrate metabolism. The exact mechanisms are still unclear (Cao et al., 2005, 2006). Such divergences may be due to the use of gi mutant alleles in different ecotypes and/or different assay conditions (Fornara et al., 2015). However, gi loss-of-function mutants of Brassica rapa plants show increased freezing tolerance suggesting that the role of GI in resistance to freezing stress is conserved between species (Xie et al., 2015).<br><br>
+
+                Another component involved in regulating both photoperiod flowering and freezing tolerance is HOS1 (HIGH EXPRESSION OF OSMOTICALLY RESPONSIVE GENE1) (Figure 3A). HOS1 encodes a RING finger-containing E3 ubiquitin ligase controlling the abundance of CO thereby ensuring that the CO-dependent activation of FT occurs only when the light period reaches a certain length (Lazaro et al., 2012). HOS1 negatively regulates cold acclimation by mediating the ubiquitination and proteasomal degradation of ICE1 (INDUCER OF CBF EXPRESSION1) and thus negatively regulates the CBF regulon (Ishitani et al., 1998; Dong et al., 2006; Lee and Thomashow, 2012).<br><br>
+            </p>
+                <h2>Photoperiod and Drought Stress</h2>
+            <p>
+                Drought has detrimental effects on plants limiting their performance and productivity. Upon the perception of drought signals, the endogenous abscisic acid (ABA) level increases resulting in closure of the stomata in order to decrease water loss via transpiration (Outlaw, 2003). <br><br>
+
+                The drought escape is an adaptive strategy of plants to accelerate reproductive development (i.e., flowering) under drought stress (Figure 3B). This allows plants to finish their life cycle before severe stress results in lethality (McKay et al., 2003). Drought escape only occurs under inductive long-day conditions involving the photoperiodic response gene GI and the florigen genes FLOWERING LOCUS T (FT) and TWIN SISTER OF FT (TSF) (Riboni et al., 2013). Drought stress releases the transcriptional repression at the FT/TSF promotors in an ABA- and photoperiod (via GI)-dependent manner thereby promoting transcriptional upregulation of the florigen genes (Riboni et al., 2013). The ABA-dependent activation of FT, but not of TSF, requires CO (Riboni et al., 2016). Increased florigen levels trigger the activation of the floral integrator SUPPRESSOR OF OVEREXPRESSOR OF CONSTANS (SOC1) thereby initiating flowering. SOC1 activation contributes to TSF upregulation thus further increasing the florigen levels (Riboni et al., 2013). Under short-day conditions, ABA delays flowering under drought stress due to the repressive action of SHORT VEGETATIVE PHASE (SVP)/FLOWERING LOCUS C (FLC) on SOC1 (Riboni et al., 2016). Also the NUCLEAR FACTOR Y (NF-Y) subunit c, belonging to a family of transcription factors known to be involved in photoperiod-dependent flowering (Kumimoto et al., 2008, 2010), is implicated in drought escape. The ABA-response element (ABRE)-binding factors (ABFs) interact with NF-Y subunit c-3/4/9, thereby inducing SOC1 to promote flowering (Hwang et al., 2019). Besides Arabidopsis, also wheat and barley have a drought escape strategy (McMaster and Wilhelm, 2003; Gol et al., 2021), just like Avena barbata (Sherrard and Maherali, 2006) and Brassica rapus (Franks, 2011). Other species, such as rice, delay flowering upon drought stress to resume its life cycle when the stress is over (Galbiati et al., 2016). Also here, primary integrators of day length provide a molecular connection between stress and the photoperiodic flowering pathway. Taken together, drought escape is a photoperiod-depend developmental response as it is the direct consequence of the perception of the long-day photoperiod during drought stress. <br><br>
+
+                Besides their role during drought escape, the photoperiod sensing components GI and NF-Y are known to additionally influence drought tolerance without any direct link to the perception of the photoperiod (Figure 3B). The synthesis and signaling of ABA are at least partially under photoperiodic control (Zeevaart, 1971). A recent study (Baek et al., 2020) revealed that GI forms a complex with the bZIP transcription factor ENHANCED EM LEVEL (EEL) involved in ABA signaling responses to regulate the expression of NINE-CIS-EPOXYCAROTENOID DIOXYGENASE3 (NCED3). NCED3 encodes a rate-limiting enzyme in ABA synthesis (Iuchi et al., 2001). The GI-EEL complex positively regulates the diurnal ABA synthesis by binding to the ABA-responsive element motif in the NCED3 gene promotor resulting in increased ABA synthesis and improved drought tolerance (Baek et al., 2020). The abundance of NCED3 transcript and ABA content decreased in gi-1 and eel mutants under dehydration, which correlates with their dehydration-sensitive phenotype (Baek et al., 2020). These results indicate that GI and EEL together enhance the plant tolerance to drought by regulating ABA homeostasis. <br><br>
+
+                Another study described a role for GI during the drought stress response (Figure 3B; Han et al., 2013a). Upon drought stress, both level and function of mature miR172 are upregulated, with miRNA172e showing the strongest response to drought stress (Han et al., 2013a). Under long days and drought conditions, GI promotes the processing of pre-miRNA172 resulting in a suppression of WRKY44, which leads to drought tolerance. The exact underlying mechanism is not fully understood but might relate to sugar metabolism (Han et al., 2013a). <br><br>
+
+                NF-Y transcription factors (Figure 3B) have been shown to improve drought tolerance in Arabidopsis (Li et al., 2013; Ni et al., 2013), maize (Nelson et al., 2007; Su et al., 2018), poplar (Han et al., 2013b), rice (Chen et al., 2015), and citrus (Pereira et al., 2018). In Arabidopsis, overexpression of NF-YA5 improved drought tolerance and micro-array analysis revealed that oxidative stress-responsive genes are strongly upregulated upon drought stress (Li et al., 2008). Transgenic Arabidopsis plants overexpressing the soybean NF-YA3 gene exhibited an increased expression of ABA biosynthesis, signaling, and stress-responsive genes (Ni et al., 2013). While this study suggested an ABA-dependent signaling resulting in improved drought resistance, overexpression of NF-YB1 in Arabidopsis also enhanced plant drought resistance independent of ABA signaling (Nelson et al., 2007). Besides their role in drought tolerance, overexpression of NF-Y transcription factors genes also improves freezing tolerance (Shi and Chan, 2014) and salt stress resistance (Li et al., 2008). <br><br>
+            </p>
+            <h2>Photoperiod and Osmotic Stress</h2>
+            <p>
+                Osmotic stress leads to desiccation, due to the high osmotic potential of saline soils, and inhibits plant growth and development (Munns, 2002; Mahajan and Tuteja, 2005). To cope with salinity or osmotic stress, plants have developed adaptation strategies, such as decreasing the water loss by stomata closure, decreasing their growth, and activating antioxidant systems (Munns and Tester, 2008). The salt overly sensitive (SOS) pathway forms the first line of defense to salt stress in Arabidopsis plants (Ji et al., 2013). The SOS pathway, which depends on SOS1, SOS2, and SOS3, has been shown to regulate cellular signaling during salt stress to achieve ion homeostasis. SOS1 encodes a Na+/H+-antiporter located at the plant cell plasma membrane, which is responsible for the efflux of Na+ from the cytoplasm to the apoplast. SOS1 is activated by the calcium-regulated SOS2-SOS3 protein kinase complex (Shi et al., 2000; Qiu et al., 2002). <br><br>
+
+                GI has been shown to be a major component of the salt stress adaptation pathway (Figure 3C; Kim et al., 2013). gi mutants are salt stress tolerant, while GI overexpression lines are extremely salt-sensitive. The underlying mechanism was revealed by Kim et al. (2013). Under non-stress conditions, GI prevents SOS2 from activating SOS1, thereby retaining the SOS system in a resting state. Upon salt stress, GI is degraded releasing SOS2 for interaction with SOS3, which causes in turn the activation of SOS1 to re-establish ion homeostasis (Kim et al., 2013; Park et al., 2016). No direct effect of the photoperiod on plant performance under salt stress is known. The involvement of the photoperiod-sensitive GI in the SOS pathway, however, suggests that the photoperiod might have a strong impact on salt stress tolerance. <br><br>
+            </p>    
+            <h2>Photoperiod and Biotic Stress Responses</h2>
+            <p>
+                Increasing evidence indicates that the length of the light period is also important for the response to diverse biotic stresses, including the responses to viruses, bacteria, and fungi (Table 1). The first observations showing that the photoperiod influences the response to pathogen infection were from Cecchini et al. (2002). They found that short-day-grown Arabidopsis (Ler) plants developed stronger disease symptoms than long-day-grown plants after infection with cauliflower mosaic virus (CaMV Cabb B-JI), although the virus replication was even higher under long-day conditions. Later on, Griebel and Zeier (2008) demonstrated that for Arabidopsis plants grown in different but constant light-dark cycles, the early disease resistance of Arabidopsis plants inoculated with Pseudomonas syringae pv. maculicola (Psm) ES4326 harboring the avrRpm1 avirulence gene is positively correlated with the length of the light period, underpinning the importance of the photoperiod. They also showed that the concentration of salicylic acid (SA) accumulated in Psm avrRpm1-infected Arabidopsis leaves, the early expression of the SA-regulated defense gene PATHOGENESIS-RELATED GENE1 (PR1), and the magnitude of the hypersensitive response-induced lesion formation are influenced by the duration of the light period. Long-day-entrained Arabidopsis plants exposed to constant light were less susceptible to infections with virulent Hyaloperonospora parasitica isolate Noco2 (Evrard et al., 2009) or P. syringae pv. tomato DC3000 (Cortleven et al., 2021). Transferring Arabidopsis from a short to a long photoperiod enhanced the resistance to the necrotrophic fungus Botrytis cinerea (Cagnola et al., 2018) and the hemibiotrophic fungus Pyricularia oryzae (syn. Magnaporthe oryzae) (Shimizu et al., 2021). In the latter case, the outcome of early plant–pathogen interactions was influenced by the length of the photoperiod following inoculation. The plant resistance to fungus penetration was enhanced, if a light period followed evening inoculations instead of the normal dark period (Shimizu et al., 2021). <br><br>
+            
+               The length of the light period influences plant responses to biotic stresses on the transcriptional level. Evrard et al. (2009) demonstrated that in Arabidopsis plants grown under 14 h day/10 h night cycles or under the same conditions but followed by 3 days of darkness, the transcriptional activity mediated by the hexameric promoter motif FORCA is suppressed by defense-related stimuli. In contrast, in constant light, the FORCA-mediated gene expression is enhanced resulting in increased defense. More generally, Baerenfaller et al. (2015) showed that the abundance of transcripts for biotic stress responses increased in Arabidopsis grown under long photoperiods compared to plants cultivated under short-day conditions. Similarly, Cagnola et al. (2018) revealed by transcriptome analysis of A. thaliana transferred from short- to long-day conditions that long photoperiods enhance the jasmonic acid (JA)-related plant defense responses. <br><br>
+
+                An improved resistance to biotic stimuli under long photoperiods is also observed in other plant species than Arabidopsis. Kenyon et al. (2002) reported that long photoperiods enhanced the resistance of Rhododendron cv. Elizabeth cut leaves, as fewer hyphae of the fungus Erysiphe sp. were produced than under short photoperiods. In tomato plants (Solanum lycopersicum cv. Ailsa Craig), nightly red light treatment (replacing the normal dark period and thereby extending the duration of the total light period) enhanced the plant resistance against P. syringae pv. tomato DC3000 infection. The increased resistance was correlated with the accumulation of SA, increased abundance of defense-related transcripts and alleviated pathogen-induced cell death (Yang et al., 2015). The resistance of maize Hm1A seedlings (containing a partial loss-of-function mutation in the Hm1 gene, encoding HC-toxin reductase inactivating the HC-toxin produced by Cochliobolus carbonum, which causes leaf spot in maize) inoculated with C. carbonum race 1 was enhanced in plants grown after infection in extended light periods and might correlate to the energy status of the plant (Marla et al., 2018). Similarly, strawberry (Fragaria ananassa cv. Elsanta) plants inoculated with B. cinerea developed stronger disease symptoms, if plants were transferred to darkness after infection compared to plants kept under their normal light conditions (Meng et al., 2020). Macioszek et al. (2021) observed that growth under short-day conditions results in increased necrosis formation in Brassica juncea plants infected with the necrotrophic fungus Alternaria brassicicola. <br><br>
+                
+                Overall, these publications clearly highlight the importance of the duration of the photoperiod in plant responses to diverse biotic stresses. Generally, a longer photoperiod causes increased biotic stress resistance. Whether this is causally linked to an improved energy state of the plants under longer photoperiods has not been discussed in the above-mentioned publications, but would be an interesting direction for future research. The role of another parameter influenced by the length of the photoperiod, the plant redox state, will be discussed in the following chapter. <br><br>
+            
+            <h2>Photoperiod and the Plant Redox State</h2>
+            <p>
+                A possible reason for the impact of the photoperiod on responses to diverse stresses is its regulatory influence on the plant redox state (for review see Shim and Imaizumi, 2015). The plant redox state and regulation of redox reactions are connected with levels of reactive oxygen species (ROS). ROS have previously been considered only as toxic by-products of aerobic metabolism, but recent research highlights their importance as plant signaling molecules (for review see Mittler, 2017). In addition, ROS cause post-translational modifications of cysteine residues in redox-sensitive proteins and thus interfere with the redox regulatory network of the cell allowing fast responses of plants to environmental cues (Cejudo et al., 2021). <br><br>
+
+                ROS include several oxygen-containing molecules, such as singlet oxygen (1O2), superoxide (O2–), hydroxyl radicals (OH–), and hydrogen peroxide (H2O2) (Shim and Imaizumi, 2015; Mittler, 2017). Of these, especially H2O2 levels are regulated by the photoperiod. In the algae Chlamydomonas reinhardtii, elevated H2O2 levels in the presence of light result from slower H2O2 degradation due to light-dependent inactivation of catalases (Shao et al., 2008). Similar observations were made in rye (Secale cereale) leaves (Hertwig et al., 1992).<br><br>
+
+                Experiments with Arabidopsis catalase2 (cat2) mutants exposed to different day lengths were particularly informative about the influence of the photoperiod on oxidative stress responses. The photoperiod, in which the cat2 mutants are grown, is decisive for the oxidative stress response and regulates H2O2-induced gene expression as well as the severity of the cell death phenotype (Queval et al., 2007; Chaouch et al., 2010; Shim and Imaizumi, 2015). While short-day-grown cat2 mutants do not display any lesions, lesion formation is visible in long day-grown cat2 mutants pointing to elevated H2O2 levels. Further analysis revealed that increased peroxisomal H2O2 in cat2 triggers pathogen defense responses and enhances the plants’ resistance in a photoperiod-dependent manner. Also lesion simulating disease1 (lsd1) mutants formed lesions only in long photoperiods (Mateo et al., 2004; Shim and Imaizumi, 2015). LSD1 is a catalase-interacting protein, regulating catalase activity, as a consequence, catalase activity is decreased in lsd1 mutants. LSD1 and CATALASE genes interact genetically and their encoded proteins are part of a protein complex, which plays an important role in regulating programmed cell death (PCD) (Li et al., 2013).<br><br>
+
+                Similar as observed for catalase, also other enzymes involved in ROS detoxification including ascorbate peroxidase and NAD-malate dehydrogenase showed in Arabidopsis a higher activity under long photoperiods (Becker et al., 2006). GI was shown to be a negative regulator of the expression of genes encoding enzymes detoxifying ROS. Indeed, the increased tolerance of gi-3 mutants to oxidative stress is caused by the constitutive activation of SUPEROXIDE DISMUTASE (SOD) and ASCORBATE PEROXIDASE (APX) genes (Cao et al., 2006).<br><br>
+
+                Together these publications support a photoperiod-dependent regulation of the plant redox state. Photoperiod sensing is linked to redox regulation, allowing efficient light usage and redox balancing in short days and preventing oxidative damage in long days (Becker et al., 2006). Especially catalases but also SOD and APX seem to be important factors exerting photoperiod information on redox regulation (Shim and Imaizumi, 2015).<br><br>
+            </p>
+            <h2>Changes in the Photoperiod Cause Stress</h2>
+            <p>
+                Sudden changes in the photoperiod, in particular its prolongation, cause photoperiod stress in short-day-adapted A. thaliana plants (Nitschke et al., 2016, 2017; Figure 4). The photoperiod stress response, which was originally observed after a prolongation of the light period by 24 h, is characterized by a typical course of events: During the night following an extended light period, the expression of stress marker genes, such as ZINC FINGER of ARABIDOPSIS THALIANA12 (ZAT12) and BON ASSOCIATED PROTEIN1 (BAP1), is induced, the concentration of the stress hormones JA and SA increase and oxidative stress occurs. The nightly increase in oxidative stress coincides with a strong decrease in the ascorbic acid (ASC) redox state and the formation of peroxides. The peroxide formation is associated with an increase of PEROXIDASE (PRX) gene expression as well as enhanced PRX and decreased catalase activities (Abuelsoud et al., 2020). During the next day, the photosystem II maximum quantum efficiency decreases, and eventually PCD ensues in the leaves (Nitschke et al., 2016, 2017). <br><br>
+
+                Photoperiod stress was first noted in cytokinin (CK)-deficient Arabidopsis plants, which show a particularly strong stress response. Among the CKs, especially trans-zeatin has a protective function acting through the ARABIDOPSIS HISTIDINE KINASE3 (AHK3) receptor and the transcriptional regulators ARABIDOPSIS RESPONSE REGULATOR2 (ARR2), ARR10, and ARR12 (Figure 4; Frank et al., 2020). Certain clock mutants (e.g., cca1 lhy, elf3) also show a stronger molecular and phenotypical response to sudden prolongations of the photoperiod. Both photoperiod stress-sensitive clock mutants and CK-deficient plants have a lower expression or impaired function of CCA1 and LHY, two key regulators of the circadian clock. This indicates that a functional clock is required to cope with photoperiod stress (Figure 4; Nitschke et al., 2016, 2017). <br><br>
+
+                In short-day-entrained Arabidopsis plants, a prolongation of the light period by only 4 h is sufficient to induce the production of ROS and the expression of stress marker genes during the following night. Longer prolongations of the light phase induce a gradually stronger stress response, which indicates that light duration has an impact on the strength of the photoperiod stress response (Abuelsoud et al., 2020). Shorter prolongations of the light period, which cause lower stress levels, are perceived as not harmful and may present a beneficial stress (eustress), while higher stress levels (by longer prolongations) induce a true stress (distress) (Krasensky-Wrzaczek and Kangasjarvi, 2018). <br><br>
+            </p>
+            <h2>Photoperiod Stress Elicits a Similar Response as Pathogen Infection</h2>
+            <p>
+                
+                RNA-seq analysis of 5-weeks-old short-day grown Arabidopsis plants exposed to a 24 h-prolongation of the light period revealed that photoperiod stress causes massive time-dependent transcriptomic changes during the night following the prolonged light period (Cortleven et al., 2021). Among the photoperiod stress-responsive genes are numerous genes related to ROS. The photoperiod stress transcript profile resembles that caused by ozone stress and pathogen attacks, which commonly elicit an apoplastic oxidative burst. Moreover, both SA and camalexin levels increased and transcript levels of genes involved in SA biosynthesis, such as ISOCHORISMATE SYNTHASE1 (ICS1), and genes involved in SAR, such as PATHOGENESIS RELATED1 (PR1) were induced by photoperiod stress (Cortleven et al., 2021). <br><br>
+                    
+                Interestingly, photoperiod stress pre-treated wild-type plants showed less P. syringae pv. tomato DC3000 colony-forming units after infection in comparison to non-photoperiod stress-treated plants. This indicates that not only similar molecular pathways are activated in response to photoperiod stress and pathogen attack, but that photoperiod stress pre-treatment leads to improved pathogen immunity in Arabidopsis plants without an actual pathogen attack (Cortleven et al., 2021). Other reports support this conclusion. In tomato, it was shown that nightly red light treatment improved the resistance against P. syringae pv. tomato DC3000 (Yang et al., 2015). The improved resistance was associated with increased SA levels and the induction of defense-related genes, which is typical of a photoperiod stress response (Cortleven et al., 2021). The transfer of short-day-grown Arabidopsis plants to long-day conditions, causing essentially photoperiod stress by 8 h light prolongation, resulted in an improved resistance against B. cinerea (Cagnola et al., 2018). Prolonged light exposure due to transfer from short to long days resulted in lower nuclear abundance of CONSTITUTIVE PHOTOMORPHOGENIC1 (COP1), thereby leading to stabilization of DELLA proteins and increased expression of the JA-signaling gene JASMONATE INSENSITIVE1 (MYC2) (Cagnola et al., 2018). Exposure of maize to a prolonged light period increased resistance against C. carbonum race 1 (Marla et al., 2018). These studies indicate that the response to photoperiod stress is conserved among different plant species and that it has similar effects on pathogen resistance. Future research needs to identify the specific mechanisms conferring the improved pathogen resistance in photoperiod stress-treated plants. <br><br>
+            </p>
+            <h2>Conclusion and Future Research Perspectives</h2>
+            <p>
+                The photoperiod provides plants with information to synchronize their developmental program with the prevailing season. It is used to match the optimal conditions for offspring production and to alleviate the threats of seasonal stresses occurring at the same time every year. In this review, we have summarized the complex photoperiod sensing mechanisms (Figures 1, 2) and especially focussed on the role of the photoperiod in plant responses to cold, drought, osmotic and biotic stresses (Figure 3 and Table 1). While the molecular mechanisms of photoperiod-dependent regulation of cold, drought, and osmotic stress are at least partly elucidated, the impact of the photoperiod on biotic stress responses remains descriptive. <br><br>
+
+                Recent studies (Nitschke et al., 2016, 2017) revealed that a sudden prolongation of the photoperiod causes a new form of abiotic stress, namely photoperiod stress, resulting in a nightly ROS accumulation in the apoplast and a stress response resembling pathogen infection (Abuelsoud et al., 2020; Cortleven et al., 2021). Photoperiod stress signals might have an adaptive value, for example by acting as a priming agent, which improves the plants’ performance to future stresses. The ecological relevance of photoperiod stress needs to be unveiled. It has been hypothesized that changes in intensity and ratios of wavelength during dawn and dusk that depend on weather conditions may modulate the output of the photoperiod sensing system (Abuelsoud et al., 2020), but the experimental proof is missing. <br><br>
+
+                In view of the impact of the photoperiod on plant responses to pathogens, it may be envisaged that controlled changes of the photoperiod have a perspective for application in greenhouse farming. In these controlled environmental conditions the duration, intensity and wavelength composition of the illumination can be precisely regulated by light-emitting diodes (LEDs), which holds the potential to improve crop yield and quality (Jones, 2018; Lazzarin et al., 2021). LEDs can also be used for pest management. Several studies showed the influence of the light environment in greenhouses (including the length of the photoperiod and light quality) (for review, see Gallé et al., 2021; Lazzarin et al., 2021), on plant resilience against pathogens such as B. cinerea in strawberries (Meng et al., 2020) or tomatoes (Yang et al., 2015). Understanding how supplemental light through LEDs acts on plant growth and defense may lead to novel sustainable horticultural methods for pest management. <br><br>
+
+            <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.781988/full#B17">Article by the Frontier</a>
+            </p>
+			</div>
+		</div>
+		<div class="flex-child">
+			<div class="column-text">Column 2</div>
+			<div class="inner-content">
+				<h1>Details for Column 2</h1>
+				<h3>By Cheyenne Tang | May 27, 2020</h3>
+            <p>
+                Well-respected, international ikebana teacher Soho Sakai began practicing the ancient Japanese art and discipline of ikebana in 1957 in Kumamoto, Japan. As a longtime Bouquets to Art exhibitor and presenter, Sakai has spent her career studying the relationship between ikebana and nature, exploring how she can create beauty with feelings. In celebration of Virtual Bouquets to Art, and Sakai’s 80th birthday, special events coordinator and Bouquets to Art organizer Cheyenne Tang caught up with Sakai to discuss the history of Bouquets to Art, ikebana, and where she finds inspiration. <br><br>
+
+                Cheyenne Tang: Thank you so much for taking the time to chat with us. We’re thrilled to hear about your experience with Bouquets to Art as a longstanding exhibitor and program presenter for over 35 years. In 1985, Bouquets to Art launched at the old de Young building, moving briefly to the Legion of Honor and then back into the new de Young in 2005. As one of our original exhibitors, could you share what it was like to do Bouquets to Art in all three buildings? <br><br>
+
+                Soho Sakai: When I was asked to participate the first time at the old de Young, it was such an honor. It was a very formal occasion and it meant everything to me to be asked. I was so excited, I even bought my own vase. I still remember it; it was a large, tall, antique bronze vase. <br><br>
+
+                I find inspiration in all of the artwork in the museum. But when the new de Young opened, I was inspired by the new building’s exterior. I made a large, wide, and narrow arrangement using copper sheets to match it. I was also excited to participate in Bouquets to Art at the new de Young because it was the first time we could choose our own artwork and space. Previously, we were assigned artwork and locations within the galleries. <br><br>
+
+                Looking back, I am happier to do the designs at the de Young versus the Legion of Honor. The de Young is located at the center of the Golden Gate Park and is much easier for people to visit. <br><br>
+
+
+
+
+            </p>
+			</div>
+		</div>
+		<div class="flex-child">
+			<div class="column-text">Virtual Bouquets to Art: Q+A with Soho Sakai</div>
+			<div class="inner-content">
+				<h2>Details for Column 3</h2>
+				<p>This is additional information for Column 3.</p>
+			</div>
+		</div>
+		<div class="flex-child">
+			<div class="column-text">Column 4</div>
+			<div class="inner-content">
+				<h2>Details for Column 4</h2>
+				<p>This is additional information for Column 4.</p>
+			</div>
+		</div>
+		<div class="flex-child">
+			<div class="column-text">Column 5</div>
+			<div class="inner-content">
+				<h2>Details for Column 5</h2>
+				<p>This is additional information for Column 5.</p>
+			</div>
+		</div>
+		<div class="flex-child">
+			<div class="column-text">Virtual Bouquets to Art: Q+A with Soho Sakai</div>
+			<div class="inner-content">
+				<h1>Virtual Bouquets to Art: Q+A with Soho Sakai</h1><br>
+				<h3>By Cheyenne Tang | May 27, 2020</h3><br>
+            <p>
+                Well-respected, international ikebana teacher Soho Sakai began practicing the ancient Japanese art and discipline of ikebana in 1957 in Kumamoto, Japan. As a longtime Bouquets to Art exhibitor and presenter, Sakai has spent her career studying the relationship between ikebana and nature, exploring how she can create beauty with feelings. In celebration of Virtual Bouquets to Art, and Sakai’s 80th birthday, special events coordinator and Bouquets to Art organizer Cheyenne Tang caught up with Sakai to discuss the history of Bouquets to Art, ikebana, and where she finds inspiration. <br><br>
+
+                Cheyenne Tang: Thank you so much for taking the time to chat with us. We’re thrilled to hear about your experience with Bouquets to Art as a longstanding exhibitor and program presenter for over 35 years. In 1985, Bouquets to Art launched at the old de Young building, moving briefly to the Legion of Honor and then back into the new de Young in 2005. As one of our original exhibitors, could you share what it was like to do Bouquets to Art in all three buildings? <br><br>
+
+                Soho Sakai: When I was asked to participate the first time at the old de Young, it was such an honor. It was a very formal occasion and it meant everything to me to be asked. I was so excited, I even bought my own vase. I still remember it; it was a large, tall, antique bronze vase. <br><br>
+
+                I find inspiration in all of the artwork in the museum. But when the new de Young opened, I was inspired by the new building’s exterior. I made a large, wide, and narrow arrangement using copper sheets to match it. I was also excited to participate in Bouquets to Art at the new de Young because it was the first time we could choose our own artwork and space. Previously, we were assigned artwork and locations within the galleries. <br><br>
+
+                Looking back, I am happier to do the designs at the de Young versus the Legion of Honor. The de Young is located at the center of the Golden Gate Park and is much easier for people to visit. <br><br>
+            </p>
+            <h2>Painting is an expression of art drawn on a canvas with a brush. Ikebana is an expression in three dimensions. —Soho Sakai</h2><br>
+            <p>
+                CT: You specialize in ikebana. Can you explain what ikebana is for those of us who aren’t familiar? 
+
+                SS: Ikebana is Japanese flower arranging. It is difficult to identify the true origins of ikebana, but it is believed to have stemmed from offering flowers to Buddha, a custom which developed into the art of ikebana. I like to compare it to a painting. While a painting is an expression of art drawn on a canvas with a brush, ikebana is an expression in three dimensions composed of plant material arranged in a vase. For me, ikebana is a way of life, an artistic way to enrich the mode of your life and the concept of your environment, with the help of all the forms of plant life. <br><br>
+                
+                CT: How did you get your start in ikebana, in particular your school of Sogetsu? <br><br>
+                
+                SS: In 1957, as a very young girl, I began to study ikebana in my hometown of Kumamoto, Japan. I received my teacher's diploma from the Sogetsu School of Ikebana in 1961, just prior to coming to the United States. I now hold the title of riji, the highest rank of the Sogetsu School. <br><br>
+                
+                During the Meiji era, the government adopted ikebana as a part of curriculum for a girl’s education. It was regarded as a necessary social grace for the young women of Japan before marriage. So what initially started as bridal training to become a good wife has now become a deep passion and way of life for me. <br><br>
+                
+                CT: Wow, that is fascinating! It is my understanding that there are more than 1,000 different schools of ikebana. Can you explain the difference between Sogetsu and the other schools of ikebana? <br><br>
+                
+                SS: The Sogetsu School was established in 1927 by the late iemoto (headmaster), Sofu Teshigahara. The primary concept for the Sogetsu School is that it can be created anytime, anywhere, by anyone in any part of the world, using any kind of material. Sogetsu is deeply rooted in Japanese tradition, but also has a modern twist. <br><br>
+                
+                There are virtually innumerable schools of ikebana in Japan, but of all of them, I believe Sogetsu is the most creative and the best anywhere in the world. Plants are the products of Mother Nature, but the basic principle of Sogetsu is “Ikebana reflects the person who arranged it.” Sogetsu has a strong emphasis on individual expression. Natural materials are often used in unexpected and creative ways.  <br><br>
+                
+                Sogetsu doesn’t have any strict rules like some other classic ikebana schools. Students of Sogetsu have the joy of expressing themselves with plants. In Sogetsu, students carefully look at the plants, discover their beauty, and enjoy the pleasure of self-expression through their own arrangement. <br><br>
+            </p>
+            <img src="https://ikebana.website/assets/2020-08-04/soho-sakai7.png" alt="3" style="width: 30%;">
+            <img src="https://ikebana.website/assets/2020-08-04/soho-sakai6.png" alt="3" style="width: 33.5%;">
+            <br><br>
+
+            <p>
+                CT: Do you have a favorite California native plant or flower? <br><br> 
+
+                SS: I love every tree and every flower! I can’t pick just one, but I do love the redbud tree. Redbud in Japanese is called “soho.” <br><br>
+
+                CT: So many artists find inspiration in the Bay Area. What are some of your favorite places in the Bay Area to get inspiration? <br><br>
+
+                SS: It is hard to say what my favorite places are because I love San Francisco! When there isn’t traffic, I like to drive across the Bay Bridge or Golden Gate Bridge to see San Francisco’s horizon. I also gain inspiration from viewing the city from the South Bay and Twin Peaks. And of course, I enjoy visiting the de Young museum, SFMOMA, and the Asian Art Museum. Many of my students make weekly arrangements at the de Young and Asian Art Museum, so I often visit to see the floral arrangements. <br><br>
+
+                CT: What advice would you give to someone who wants to learn ikebana? <br><br>
+
+                SS: I think anybody who loves nature, flowers, and plants will enjoy ikebana. Those who feel as if they can talk and listen to nature can learn ikebana. If you gaze at a flower or a tree, they look beautiful, blooming in their natural environment. They can hardly be improved upon. It is up to you and your aesthetic awareness to assemble the materials, choose their most beautiful aspects, put them in a different order, and endow them with a value transcending that which they had in nature. Arranging ikebana begins with careful observation of the plant materials. <br><br>
+            </p>
+            <h3>Text by Cheyenne Tang, special events coordinator and Bouquets to Art organizer.</h3>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Select all flex-child elements
+		const flexChildren = document.querySelectorAll('.flex-child');
+
+		// Add click event listener to each flex-child
+		flexChildren.forEach(child => {
+			child.addEventListener('click', () => {
+				// Remove the active class from all flex children
+				flexChildren.forEach(c => c.classList.remove('active'));
+				// Add the active class to the clicked flex-child
+				child.classList.add('active');
+			});
+		});
+	</script>
+</body>
+</html>

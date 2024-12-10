@@ -9,6 +9,10 @@ body {
   font-family: 'BIZUDP';
   src: url(./fonts/BIZUDP-Regular.ttf);
 }
+@font-face {
+  font-family: 'Figtree';
+  src: url(./fonts/Figtree.ttf);
+}
 
 .scroll-container {
   /* display: flex; */

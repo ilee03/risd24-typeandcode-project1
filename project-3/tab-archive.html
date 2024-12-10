@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Archive</title>
+  <style>
+    /* General Reset */
+    @font-face {
+            font-family: 'Figtree';
+            src: url(./fonts/Figtree.ttf);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fdfbf7;
+      color: #db4d40;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 20px 30px;
+      position: relative;
+      font-size: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #db4d40;
+      text-transform: uppercase;
+      margin-left: 20px;
+      transition: color 0.3s;
+      align-items: center;
+    }
+
+    nav a:hover {
+      color: #db4d40;
+      text-decoration: underline;
+    }
+
+    /* Content Layout */
+    .content {
+      margin: 40px 60px;
+      align-items: baseline;    
+      justify-content: baseline;
+    }
+
+    .branding {
+      overflow: hidden; /* Ensures the animation is visible within its container */
+      white-space: nowrap; /* Prevents the text from wrapping */
+    }
+
+    .branding h1 {
+      font-size: 100px;
+      color: #db4d40;
+      text-transform: uppercase;
+      font-weight: lighter;
+      display: inline-block;
+      animation: marquee 10s linear infinite; /* Marquee animation */
+      margin: 0%;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Grid Section */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      /* background-color: #f8f8f8;
+      border: 1px solid #eee; */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .grid-item img {
+      max-width: 100%; /* Ensures images fit within their container */
+      max-height: 250px; /* Limits the height of the images */
+      object-fit: contain; /* Keeps the original aspect ratio */
+      margin-bottom: 10px;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+<body>
+  <nav>
+    <a href="./index.html">Index</a>
+    <a href="./tab-archive.html">Archive</a>
+    <a href="./tab-articles.html">Articles</a>
+    <a href="./tab-plants.html">Plants</a>
+  </nav>
+
+  <div class="content">
+    <section class="branding">
+      <h1>Digital Plant Archive </h1>
+    </section>
+
+    <section class="grid">
+      <div class="grid-item">
+        <img src="https://archive.org/download/cacaths_000193/cacaths_000193_access.jpg" alt="1">
+        <p>Catherine Ellis in flowers</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/2-cfca-8-d-7-0-a-0-f-4-b-3-d-8278-94-ed-29-ce-3661" alt="Rare Medium 6">
+        <p>Rare Medium 6</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/154B8D0994FD4A47A72E075C28AC9CDC" alt="Harm Less">
+        <p>Harm Less</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/91506F6787FB4CF5AB7F6FE925541B1F" alt="Rare Medium 4">
+        <p>Rare Medium 4</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/download/7-d-0399-d-0-6723-4-c-58-9-cce-0569-d-83-d-9969/7D0399D0-6723-4C58-9CCE-0569D83D9969.jpeg" alt="Rare Medium 5">
+        <p>Rare Medium 5</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/queenofthenightcactus" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/clevelandart-1990.67-hoopoe-on-a-citrus-t" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/1003619408" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/tulips_202404" alt="3">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/53408/1642290/main-image" alt="4">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/download/clevelandart-1958.46-vase-of-flowers/1958.46_full.jpg" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/cacaths_000964" alt="6">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/GPN-1027_Pepoon_Large-cluster-of-wildflowers_lowres" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/clevelandart-2003.258-jar-with-flowers-roc" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/details/clevelandart-1992.380-summer-flowers" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32408-a" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/cacaths_000940" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/brooklynmuseum-o1515-apple-blossoms" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/1961.259Full" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/clevelandart-2020.183-dish-with-carved-flog" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/quaternius-plants" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/a-whole-bunch-of-flowers-and-plants-from-the-flowerpot" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/StNicholas192005" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/hollyhock-hedge-at-hoyt-library" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/Calycanthus-floridus-PHAIDRA_o_26380" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/brooklynmuseum-o1515-apple-blossoms" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/img-3153" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://wpmedia.japanesegarden.org/cb:An8z.2f0c8/w:188/h:282/q:mauto/ig:avif/id:fc96e7d2033e9f0fb4ebff765cea91e4/http://live-japanesegarden.pantheonsite.io/Ryuseiha-Ikebana-Exhibition-by.-Peter-Friedman-ikebana-artist-Reiko-Granade.jpg" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://static01.nyt.com/images/2017/11/06/t-magazine/ikebana-slide-GBIC/ikebana-slide-GBIC-superJumbo.jpg?quality=75&auto=webp&disable=upscale" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://static01.nyt.com/images/2017/11/06/t-magazine/ikebana-slide-LW4B/ikebana-slide-LW4B-superJumbo.jpg?quality=75&auto=webp&disable=upscale" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://static01.nyt.com/images/2017/11/06/t-magazine/ikebana-slide-KR8O/ikebana-slide-KR8O-superJumbo.jpg?quality=75&auto=webp&disable=upscale" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://static01.nyt.com/images/2017/11/06/t-magazine/ikebana-slide-F86B/ikebana-slide-F86B-superJumbo.jpg?quality=75&auto=webp&disable=upscale" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://static01.nyt.com/images/2017/11/06/t-magazine/ikebana-slide-Z7IF/ikebana-slide-Z7IF-superJumbo.jpg?quality=75&auto=webp&disable=upscale" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://blog.flowersacrossmelbourne.com.au/wp-content/uploads/2014/08/Golden-Wattle-150x150.jpg" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Trillium_grandiflorum_at_Backus_Woods.jpg/440px-Trillium_grandiflorum_at_Backus_Woods.jpg" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://archive.org/services/img/propix.SIL08-32645-b" alt="Dotti">
+        <p>Dotti</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
