@@ -7,7 +7,7 @@ body {
 }
 
 a, button, img {
-  cursor: url(/project-3/images/shovel2.png) 16 50, pointer; /* Apply custom cursor to links and buttons */
+  cursor: url(/project-3/images/shovel2.png) 16 50, pointer; 
 }
 
 @font-face {
@@ -27,19 +27,17 @@ a, button, img {
 
 .content {
   display: inline-flex;
-  /* width: calc(100vw * 6); Dynamically calculate width based on the number of sections */
 }
 
 .section {
   display: flex; 
   align-items: center; 
-  /* flex-wrap: wrap; */
   min-width: 100vw;
   height: 100vh;
   background-color: #e0e0f6;
   background-image: 
-    url('./images/grass.png'), /* First background (bottom layer) */
-    url('./images/grass2.png'); /* Second background (top layer) */
+    url('./images/grass.png'), 
+    url('./images/grass2.png'); 
   background-repeat: repeat-x, repeat-x; 
   background-position: bottom 0px center, bottom center; 
   position: relative;
@@ -48,28 +46,26 @@ a, button, img {
 
 
 
-/* Flower images positioned inside each section */
 .section .flower-image {
   position: sticky;
-  max-width: 440px; /* Set a maximum width for larger screens */
-  height: auto; /* Maintain aspect ratio */
-  /* z-index: 2; Ensure the flower image is above the background */
+  max-width: 440px; 
+  height: auto; 
+
 }
 
 .site-header {
-  position: sticky; /* Keep the header at the top */
+  position: sticky;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000; 
   padding-top: 20px;
-  /* transition: background-color 0.5s ease; Smooth background transition */
 }
 #nav-overlay {
-  opacity: 0; /* Start fully hidden */
-  pointer-events: none; /* Disable interactions when hidden */
+  opacity: 0; 
+  pointer-events: none; 
   position: fixed;
   top: 20px;
   right: 20px;
@@ -77,7 +73,7 @@ a, button, img {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  transition: opacity 0.3s ease; /* Smooth fade-in/out */
+  transition: opacity 0.3s ease; 
 }
 
 .nav-links {
@@ -86,6 +82,7 @@ a, button, img {
   gap: 20px;
   padding: 0;
   margin: 0;
+  font-family: 'Figtree';
 }
 
 .nav-links li a {
@@ -97,31 +94,30 @@ a, button, img {
 }
 
 .nav-links li a:hover {
-  color: #ffe881;
+  color: #ff7f48;
 }
 
-/* Default title styling */
 h1 {
-  font-size: 9rem; /* Default size for larger screens */
+  font-size: 9rem; 
   color: #391a1b;
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 20px 20px 5px 20px;
-  transition: font-size 0.3s ease; /* Smooth transition for resizing */
+  transition: font-size 0.3s ease;
 }
 
-/* Adjust title for medium screens */
+
 @media (max-width: 768px) {
   h1 {
-      font-size: 6rem; /* Shrinks title size for medium-sized screens */
+      font-size: 6rem; 
   }
 }
 
-/* Adjust title for small screens */
+
 @media (max-width: 480px) {
   h1 {
-      font-size: 4rem; /* Shrinks title size further for small screens */
+      font-size: 4rem; 
   }
 }
 
@@ -136,7 +132,8 @@ h2 {
   font-weight: 400;
   font-size: 4rem;
   color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  transition: color 0.5s ease; 
+  letter-spacing: -0.1em;
 }
 
 h3 {
@@ -149,16 +146,15 @@ h3 {
   font-weight: 400;
   font-size: 1.7rem;
   color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  transition: color 0.5s ease; 
 }
 
 .vertical-section {
-  /* display: flex; */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center all content vertically */
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
   text-align: center;
-  background-color: #adc160; /* Section background */
+  background-color: #adc160;
 }
 
 .squiggly-divider {
@@ -185,6 +181,8 @@ h3 {
   font-size: 1.2rem;
   line-height: 1.6; 
   color: #333;
+  letter-spacing: -0.05em;
+
 }
 
 .inner {
@@ -194,40 +192,38 @@ h3 {
 
 /* Tooltip container styling */
 .tooltip {
-  position: relative; /* Positioning for the tooltip */
-  display: inline-block; /* Keep it inline with the image */
+  position: relative; 
+  display: inline-block;
 }
 
 /* Tooltip text styling */
 .tooltip .tooltiptext {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9rem;
   white-space: nowrap;
-  opacity: 0; /* Initially hidden */
-  visibility: hidden; /* Hidden from the flow */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  z-index: 10; /* Ensure it appears above the image */
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  z-index: 10; 
 }
 
-/* Tooltip visibility on hover */
 .tooltip-image:hover + .tooltip .tooltiptext {
-  opacity: 1; /* Make tooltip visible */
-  visibility: visible; /* Make tooltip appear */
+  opacity: 1;
+  visibility: visible; 
 }
 
-/* Ensure image stays in place */
 .tooltip-image {
-  width: 25%; /* Adjust image size */
+  width: 25%;
   position: absolute;
   top: -50%;
   right: 4%;
 }
 
-/* Plant pages here  */
+/* Plant pages start here  */
 .plant-page {
   background-color: #fffff7;
   font-family: 'BIZUDP';
@@ -238,9 +234,7 @@ main {
   padding: 7%;
 }
 
-main h1 {
-  font-size: 6rem;
-}
+
 
 main h3 {
   margin: 1% 0;
@@ -327,9 +321,11 @@ main p, .instructions {
   padding: 15vw 10vw 15vw 10vw;           
   margin: 100px;              
   border: 1px solid #ddd;    
-  border-radius: 5%;
+  border-radius: 32px;
   font-family: 'BIZUDP';
   font-size: 4rem;
+  letter-spacing: -0.1em;
+
 }
 
 .flex-wrapper {
@@ -373,7 +369,6 @@ header img {
   justify-content: center;
 }
 
-/* Default image style */
 .grid-container > div img {
   position: absolute;
   top: 50%;
@@ -381,30 +376,27 @@ header img {
   width: auto;
   height: 100%;
   transform: translate(-50%, -50%);
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
-/* Shrink original image on hover */
 .grid-container > div:hover img {
-  transform: translate(-50%, -50%) scale(0.8); /* Scale down while keeping aspect ratio */
-  opacity: 0; /* Fade out the original image */
+  transform: translate(-50%, -50%) scale(0.8); 
+  opacity: 0; 
 }
 
-/* Alternate image style */
 .grid-container > div img.alt-image {
   position: absolute;
   top: 50%;
   left: 50%;
   width: auto;
   height: 100%;
-  transform: translate(-50%, -50%) scale(0.8); /* Match the hover size of the original */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+  transform: translate(-50%, -50%) scale(0.8); 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
 }
 
-/* Show alternate image on hover */
 .grid-container > div:hover img.alt-image {
-  opacity: 1; /* Fade in the alternate image */
+  opacity: 1;
 }
 
 
@@ -418,7 +410,7 @@ header img {
   .grid-container { flex-direction: column; }
 }
 
-/* Keyframes for the shake effect */
+/* numbers generated with chat gpt  */
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -427,27 +419,25 @@ header img {
   100% { transform: translateX(0); }
 }
 
-/* Shake class for flower images */
+
 .flower-image.shake {
-  animation: shake 0.5s ease-in-out; /* Adjust duration as needed */
+  animation: shake 0.5s ease-in-out; 
 }
 
 
-/* Ensure the plants.png image is responsive */
 .plants {
-  max-width: 100%; /* The image will never exceed the width of its container */
-  height: auto; /* Maintains the aspect ratio */
+  max-width: 100%; 
+  height: auto; 
 }
 
-/* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .plants {
-      width: 90%; /* Shrinks to 90% of the viewport width on smaller screens */
+      width: 90%; 
   }
 }
 
 @media (max-width: 480px) {
   .plants {
-      width: 80%; /* Shrinks further to 80% of the viewport width on very small screens */
+      width: 80%; 
   }
 }

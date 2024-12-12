@@ -10,11 +10,19 @@
             font-family: 'Figtree';
             src: url(./fonts/Figtree.ttf);
     }
+    @font-face {
+            font-family: 'Figtree Italic';
+            src: url(./fonts/Figtree-Italic.ttf);
+    }
+    @font-face {
+            font-family: 'Jasmine';
+            src: url(./fonts/JasmineUPC\ Regular.ttf);
+        }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Figtree';
       background-color: #fdfbf7;
       color: #db4d40;
       cursor: url('/project-3/images/gloves2.png') 16 50, pointer !important;
@@ -42,6 +50,8 @@
     nav a:hover {
       color: #db4d40;
       text-decoration: underline;
+      font-family: 'Figtree Italic';
+
     }
 
     /* Content Layout */
@@ -52,17 +62,18 @@
     }
 
     .branding {
-      overflow: hidden; /* Ensures the animation is visible within its container */
-      white-space: nowrap; /* Prevents the text from wrapping */
+      overflow: hidden; 
+      white-space: nowrap;
     }
 
     .branding h1 {
-      font-size: 100px;
+      font-size: 400px;
       color: #db4d40;
       text-transform: uppercase;
       font-weight: lighter;
       display: inline-block;
-      animation: marquee 10s linear infinite; /* Marquee animation */
+      animation: marquee 10s linear infinite; 
+      font-family: 'Jasmine';
       margin: 0%;
     }
 
@@ -75,7 +86,6 @@
       }
     }
 
-    /* Grid Section */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -88,15 +98,16 @@
       padding: 15px;
       font-size: 14px;
       font-weight: bold;
-      /* background-color: #f8f8f8;
-      border: 1px solid #eee; */
       transition: transform 0.3s, box-shadow 0.3s;
+      font-family: 'Figtree';
+
+      
     }
 
     .grid-item img {
-      max-width: 100%; /* Ensures images fit within their container */
-      max-height: 250px; /* Limits the height of the images */
-      object-fit: contain; /* Keeps the original aspect ratio */
+      max-width: 100%; 
+      max-height: 250px; 
+      object-fit: contain; 
       margin-bottom: 10px;
     }
 
@@ -112,7 +123,6 @@
     <a href="./index.html">Index</a>
     <a href="./tab-archive.html">Archive</a>
     <a href="./tab-articles.html">Articles</a>
-    <a href="./tab-plants.html">Plants</a>
   </nav>
 
   <div class="content">

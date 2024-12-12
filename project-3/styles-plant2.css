@@ -4,34 +4,32 @@
 }
 /* Tooltip container styling */
 .tooltip {
-  position: relative; /* Positioning for the tooltip */
-  display: inline-block; /* Keep it inline with the image */
+  position: relative; 
+  display: inline-block; 
 }
 
-/* Tooltip text styling */
+
 .tooltip .tooltiptext {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.75); 
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9rem;
   white-space: nowrap;
-  opacity: 0; /* Initially hidden */
-  visibility: hidden; /* Hidden from the flow */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  z-index: 10; /* Ensure it appears above the image */
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  z-index: 10;
 }
 
-/* Tooltip visibility on hover */
 .tooltip-image:hover + .tooltip .tooltiptext {
-  opacity: 1; /* Make tooltip visible */
-  visibility: visible; /* Make tooltip appear */
+  opacity: 1; 
+  visibility: visible; 
 }
 
-/* Ensure image stays in place */
 .tooltip-image {
-  width: 25%; /* Adjust image size */
+  width: 25%;
   position: absolute;
   top: -50%;
   right: 4%;
@@ -39,7 +37,6 @@
 
 
 
-/* Title styling */
 h1 {
   top: 0;
   left: 0;
@@ -50,7 +47,7 @@ h1 {
   font-weight: 400;
   font-size: 9rem;
   color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  transition: color 0.5s ease;
 }
 
 h2 {
@@ -63,7 +60,7 @@ h2 {
   font-weight: 400;
   font-size: 4rem;
   color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  transition: color 0.5s ease; 
 }
 
 h3 {
@@ -76,7 +73,7 @@ h3 {
   font-weight: 400;
   font-size: 1.7rem;
   color: #391a1b;
-  transition: color 0.5s ease; /* Smooth transition for title color */
+  transition: color 0.5s ease; 
 }
 
 
@@ -122,7 +119,7 @@ main img {
   width: 100%;
   padding: 8% 0%;
   border-radius: 40px;
-  border: 4px dashed #828650; /* Thicker dashes */
+  border: 4px dashed #828650; 
   grid-row: span 4;
 }
 
@@ -131,7 +128,7 @@ main p, .instructions2 {
   
   padding: 2%;
   border-radius: 20px;
-  border: 4px dashed #828650; /* Thicker dashes */
+  border: 4px dashed #828650; 
   margin: 0;
   display: flex;
   align-items: center;
@@ -201,11 +198,10 @@ table h1 {
 
 .background-image {
   position: absolute;
-  z-index: -1; /* Place the image behind other elements */
-  top: 40%; /* Adjust the vertical position */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%) rotate(-5deg); /* Center and tilt the image */
-  width: 80vh; /* Adjust size to fit well behind the table */
-  opacity: 0.2; /* Slight transparency for better contrast */
+  z-index: -1; 
+  top: 40%; 
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  width: 80vh; 
+  opacity: 0.2; 
 }
-

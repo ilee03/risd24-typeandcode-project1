@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flow Specimen</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body onscroll="setAxes()">
@@ -19,46 +18,46 @@
                 <source src="./waterfall/waterfall-sound.mp3" type="audio/mpeg">
             </audio>
 
-
             <p class="flow-scroll" contenteditable="plaintext-only">Go with<br>the <br>Flow</p>
         </div>
     </div>
 
     <div class="flexbox-container">
-        <p class="flow-slider" id="my-element" contenteditable="plaintext-only">Flow <br> just as the rain creates ripples in the water, this font imitates the movement of the waves found in puddles. <br> Type here to test!
+        <p class="flow-slider" id="my-element" contenteditable="plaintext-only">
+            Flow <br> Just as the rain creates ripples in the water, this font imitates the movement of the waves
+            found in puddles. <br> Type here to test!
+        </p>
 
+        <!-- Sliders -->
         <div class="sliders-container">
             <h2>Vapor Specimen Tester</h2>
 
-            <!-- Vapor slider -->
+            <!-- Vapor Slider -->
             <div id="sliders">
                 <label class="range-name">Vapor</label>
-                <input type="range" class="axis-range" id="vapr-slider" min="7" max="5000" value="0"
+                <input type="range" class="axis-range slider" id="vapr-slider" min="7" max="5000" value="0"
                     oninput="changeVapr(this.value)">
                 <span class="min">Sen</span>
             </div>
 
-            <!-- Font Size slider -->
+            <!-- Font Size Slider -->
             <div id="font-size-slider">
                 <label class="range-name">Font Size</label>
-                <input type="range" class="axis-range" id="font-size-slider-input" min="50" max="200" value="100"
-                    oninput="changeFontSize(this.value)">
-                <!-- <span class="min">50px</span>
-				<span class="max">200px</span> -->
+                <input type="range" class="axis-range slider" id="font-size-slider-input" min="50" max="200"
+                    value="100" oninput="changeFontSize(this.value)">
             </div>
 
-            <!-- Letter Spacing slider -->
+            <!-- Letter Spacing Slider -->
             <div id="letter-spacing-slider">
                 <label class="range-name">Letter Spacing</label>
-                <input type="range" class="axis-range" id="letter-spacing-slider-input" min="-10" max="20" value="0"
-                    oninput="changeLetterSpacing(this.value)">
-                <!-- <span class="min">-10px</span>
-				<span class="max">20px</span> -->
+                <input type="range" class="axis-range slider" id="letter-spacing-slider-input" min="-10" max="20"
+                    value="0" oninput="changeLetterSpacing(this.value)">
             </div>
         </div>
+
+        <!-- Download Button -->
         <a href="/LIVE Type/fonts/FlowVF.ttf" download="FlowVF.ttf" id="download-button">🦆</a>
     </div>
-
 
     <div class="content">
         <div class="flex-wrapper">

@@ -1,3 +1,4 @@
+// js made with chatgpt
 document.addEventListener('DOMContentLoaded', () => {
     const scrollContainer = document.querySelector('.scroll-container');
     const sections = document.querySelectorAll('.section');
