@@ -14,13 +14,14 @@
             src: url(./fonts/Poppins-Italic.ttf);
         }
         @font-face {
-            font-family: 'Doto';
-            src: url(./fonts/Doto-Regular.ttf);
+            font-family: 'ALO';
+            src: url(./fonts/Alegreya-Regular.ttf);
         }
         @font-face {
-            font-family: 'Doto Med';
-            src: url(./fonts/Doto-Medium.ttf);
+            font-family: 'NOT';
+            src: url(./fonts/NoticiaText-Regular.ttf);
         }
+
 
         * {
             margin: 0;
@@ -44,14 +45,16 @@
             background-color: #f0f0f0;
             text-align: left; /* Align text to the left */
             padding: 20px;
-            text-transform: uppercase;
         }
 
         .left p {
             margin: 20px 0;
-            font-size: 7rem;
+            text-wrap: wrap;
+            font-size: 9rem;
             text-align: left; /* Ensure text alignment is on the left */
-            font-family: 'Poppins';
+            font-family:'Poppins';
+            letter-spacing: -0.5rem;
+            text-transform: uppercase;
             line-height: 1em;
             font-weight: 800;
 
@@ -67,6 +70,7 @@
             overflow-y: auto; /* Enable scrolling */
             max-height: 100vh; /* Ensure it stays within the viewport */
             font-family: 'Poppins';
+            padding-left: 0.2%;
 
         }
 
@@ -89,27 +93,27 @@
         }
 
         .flex-child:nth-child(1) {
-            background-color: #E9E396;
+            background-color: #f0f0f0;
         }
 
         .flex-child:nth-child(2) {
-            background-color: #E7E08B;
+            background-color: #f0f0f0;
         }
 
         .flex-child:nth-child(3) {
-            background-color: #E4E9B2;
+            background-color: #f0f0f0;
         }
 
         .flex-child:nth-child(4) {
-            background-color: #D2E4C4;
+            background-color: #f0f0f0;
         }
 
         .flex-child:nth-child(5) {
-            background-color: #B5CBB7;
+            background-color: #f0f0f0;
         }
 
         .flex-child:nth-child(6) {
-            background-color: #818479;
+            background-color: #f0f0f0;
         }
 
         .column-text {
@@ -147,8 +151,21 @@
             display: block;
         }
 
+        .left h1 {
+            margin: 0; /* Remove any default margins */
+            padding: 0; /* Remove extra padding */
+            text-align: left; /* Ensure text alignment is to the left */
+            font-size: 10rem; /* Adjust responsive font size */
+            font-weight: 900;
+            line-height: 1; /* Fine-tune line height */
+            font-family: 'Poppins';
+            text-transform: uppercase;
+            letter-spacing: -1px; /* Adjust letter spacing for visual clarity */
+            color: #000000; /* Set text color for contrast */
+        }
+
         h1 {
-            font-family: 'Doto Med';
+            font-family: 'ALO';
             line-height: 50px;
             font-size: clamp(2rem, 3vw, 5rem);
             font-weight: 400;
@@ -161,19 +178,19 @@
             font-size: 1rem;
         }
 
+        h2 {
+            font-family: 'Poppins';
+            color: black;
+            font-size: 4rem;
+        }
+
         a {
-            font-family: Georgia, 'Times New Roman', Times, serif  ;
+            font-family:'ALO';
             font-size: 1rem;
             color: #db4d40;
 
         }
 
-        .left a {
-            font-family: Georgia, 'Times New Roman', Times, serif  ;
-            font-size: 1rem;
-            color: #db4d40;
-
-        }
         nav {
             grid-column: 1 / span 2;
             padding: 20px 30px;
@@ -187,7 +204,7 @@
             text-transform: uppercase;
             margin: 0 15px;
             transition: color 0.3s;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-family: 'Poppins';
         }
 
@@ -215,25 +232,25 @@
 </head>
 <body>
     <nav>
-        <a href="#section1">Section 1</a>
-        <a href="#section2">Section 2</a>
-        <a href="#section3">Section 3</a>
-        <a href="#section4">Section 4</a>
-        <a href="#section5">Section 5</a>
-        <a href="#section6">Section 6</a>
+        <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-digital-twin-technology">Link to Original Article</a>
+        <a href="#section2">Section 1</a>
+        <a href="#section3">Section 2</a>
+        <a href="#section4">Section 3</a>
+        <a href="#section5">Section 4</a>
+        <a href="#section6">Section 5</a>
+        <a href="#section6">Section 5</a>
+
     </nav>
     
     
     <!-- Left Section -->
     <div class="left">
-    <p> What is<br> Digital Twin Technology?</p>
-    <br><br>
-    <p>August 26, <br> 2024 </p> <br><br>    
-        <p>mckinsey and company </p> <br><br>
-        <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-digital-twin-technology">Link to Original Article</a>
-        <p>"A digital twin is a digital replica of a physical object, person, system, or process, context<br>-ualized in a digital version of its environment. Digital twins can help many kinds of organizations simulate real situations and their outcomes, ultimately allowing them to make better decisions."
+    <h1> What is<br> Digital Twin <br> Techn-ology?</h1> <br><br>
+    <h2>August 26, 2024</h2> <br><br>
+    <p>mckinsey & company </p> <br><br>
+        <br><br><br><br><br>
+        <p>"A digital twin is a digital replica of <br>a physical object, person, system, or process, context<br>-ualized in <br>a digital version of its envir-onment. <br><br>Digital twins can help many kinds of organizations simulate real situations and their outcomes, ultimately allowing them to make better decisions."
         </p>
-        <p>End of left content.</p>
     </div>
 
     <!-- Right Section -->
