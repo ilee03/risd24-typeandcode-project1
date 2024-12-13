@@ -1,13 +1,54 @@
+/* Reset margins and paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* Shared styles for all h1 elements */
+h1, main h1 {
+  margin: 0;
+  padding: 20px 20px 5px 20px;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 9rem;
+  color: #db4d40;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Specific styles for main h1 */
+main h1 {
+  text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1, main h1 {
+    font-size: 5rem; /* Shrink for medium screens */
+  }
+}
+
+@media (max-width: 580px) {
+  h1, main h1 {
+    font-size: 3rem; /* Shrink further for smaller screens */
+  }
+}
+
+
+/* Tooltip container styling */
 @font-face {
   font-family: 'BIZUDP';
   src: url(./fonts/BIZUDP-Regular.ttf);
 }
-/* Tooltip container styling */
+
 .tooltip {
   position: relative; 
   display: inline-block; 
 }
-
 
 .tooltip .tooltiptext {
   position: absolute;
@@ -35,8 +76,6 @@
   right: 4%;
 }
 
-
-
 h1 {
   top: 0;
   left: 0;
@@ -46,44 +85,46 @@ h1 {
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
   font-size: 9rem;
-  color: #391a1b;
-  transition: color 0.5s ease;
+  color: #db4d40;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5rem; /* Shrink for medium screens */
+  }
+}
+
+@media (max-width: 580px) {
+  h1 {
+    font-size: 3rem; /* Shrink further for smaller screens */
+  }
+}
+
+h2, h3 {
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0px 20px 20px 20px;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-weight: 400;
+  transition: color 0.5s ease; 
 }
 
 h2 {
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  margin: 0;
-  padding: 0px 20px 20px 20px;
-  font-family: 'BIZUDP', Arial, sans-serif;
-  font-weight: 400;
   font-size: 4rem;
-  color: #391a1b;
-  transition: color 0.5s ease; 
+  color: #db4d40;
 }
 
 h3 {
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  margin: 0;
-  padding: 0px 20px 20px 20px;
-  font-family: 'BIZUDP', Arial, sans-serif;
-  font-weight: 400;
   font-size: 1.7rem;
-  color: #391a1b;
-  transition: color 0.5s ease; 
+  color: #db4d40;
 }
-
-
-
 
 .plant-page2 {
   background-color: #fbf6f1;
   font-family: 'BIZUDP';
   cursor: url('/project-3/images/shovel2.png'), pointer !important;
-
 }
 
 header {
@@ -104,16 +145,6 @@ main {
   padding: 7%;
 }
 
-main h1 {
-  font-size: 6rem;
-}
-
-main h3 {
-  margin: 1% 0;
-  letter-spacing: 6px;
-  font-size: 2rem;
-}
-
 main img {
   background-color: #ffffff;
   width: 100%;
@@ -125,7 +156,6 @@ main img {
 
 main p, .instructions2 {
   background-color: #ffffff;
-  
   padding: 2%;
   border-radius: 20px;
   border: 4px dashed #828650; 
@@ -160,20 +190,15 @@ main p, .instructions2 {
   width: 85%;
 }
 
-
 .instructions2 li {
   margin-bottom: 2%;
 }
 
 #customers {
   border-collapse: collapse;
-  width: 100%;
-  font-family: 'BIZUDP';
-  margin: 5vw;
   width: 50%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 25%;
+  margin: 5vw auto; /* Center the table horizontally */
+  font-family: 'BIZUDP';
 }
 
 #customers td, #customers th {
@@ -181,9 +206,13 @@ main p, .instructions2 {
   padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover {
+  background-color: #ddd;
+}
 
 .inner {
   cursor: url(/project-3/images/gloves2.png), pointer;
@@ -192,9 +221,7 @@ main p, .instructions2 {
 table h1 {
   font-size: 6rem;
   padding: 104px 0px 0px 100px;
-
 }
-
 
 .background-image {
   position: absolute;
@@ -204,4 +231,38 @@ table h1 {
   transform: translate(-50%, -50%) rotate(-5deg);
   width: 80vh; 
   opacity: 0.2; 
+}
+
+@media (max-width: 768px) {
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 2em; /* Adjust gap for spacing */
+  }
+
+  main img {
+    width: 100%; /* Ensure images fit within the column */
+  }
+
+  .instructions2 {
+    text-align: center; /* Center-align text for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid2 {
+    grid-gap: 1em; /* Reduce gap for very small screens */
+  }
+
+  table h1 {
+    font-size: 1.5rem; /* Adjust title font sizes */
+  }
+
+  main h3 {
+    font-size: 1.5rem; /* Adjust subheading font size */
+  }
+
+  .instructions2 ul {
+    width: 100%; /* Adjust list width */
+  }
 }
