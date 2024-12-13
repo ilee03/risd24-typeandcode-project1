@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrated Layout</title>
+    <title>Digital Twin</title>
     <style>
         @font-face {
             font-family: 'Figtree';
@@ -21,50 +21,53 @@
         }
 
         body {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
             height: 100vh;
             overflow: hidden;
         }
 
         /* Left Section */
         .left {
-            flex: 1;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
             overflow-y: auto;
             background-color: #f0f0f0;
             text-align: center;
             padding: 20px;
         }
 
-		.left p {
-			margin: 20px 0;
-			font-size: 6rem;
-			text-align: left; /* Aligns text to the left */
-		}
+        .left p {
+            margin: 20px 0;
+            font-size: 6rem;
+            text-align: left;
+        }
 
         /* Right Section */
         .right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-rows: repeat(6, 1fr); /* Create equal rows for flex children */
             gap: 1px;
             background-color: black;
             overflow-y: auto;
         }
 
         .flex-child {
-            flex-grow: 5;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transition: flex-grow 0.5s ease;
+            transition: border-radius 0.5s ease;
         }
 
         .flex-child:hover {
-            flex-grow: 10;
+            border-radius: 50px; /* Add rounded corners on hover */
         }
 
         .flex-child.active {
-            flex-grow: 15;
+            grid-row: span 6; /* Expand to occupy the entire grid when active */
         }
 
         .flex-child:nth-child(1) { background-color: white; }
@@ -74,28 +77,18 @@
         .flex-child:nth-child(5) { background-color: #b5e1cc; }
         .flex-child:nth-child(6) { background-color: #f2d1cc; }
 
-		.column-text {
-        font-size: clamp(0.5rem, 2vw, 1.5rem); /* Adjusts font size dynamically */
-        font-family: 'Figtree';
-        font-weight: bold;
-        color: black;
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.5s ease, font-size 0.3s ease; /* Smooth font-size transition */
-    }
-
-    @media (max-width: 768px) {
-        .right {
-            flex-direction: column; /* Stack the flexboxes */
-        }
-
         .column-text {
-            font-size: clamp(0.8rem, 3vw, 1rem); /* Smaller font size for smaller screens */
+            font-size: clamp(0.5rem, 2vw, 1.5rem);
+            font-family: 'Figtree';
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease, font-size 0.3s ease;
         }
-    }
 
         .flex-child.active .column-text {
             opacity: 0;
@@ -133,17 +126,17 @@
         }
 
         nav {
-            display: flex;
-            justify-content: center;
+            grid-column: 1 / span 2;
             padding: 20px 30px;
             background-color: #f0f0f0;
+            text-align: center;
         }
 
         nav a {
             text-decoration: none;
             color: #db4d40;
             text-transform: uppercase;
-            margin-left: 20px;
+            margin: 0 15px;
             transition: color 0.3s;
         }
 
@@ -153,18 +146,30 @@
 
         @media (max-width: 768px) {
             body {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr 1fr;
             }
 
             .left, .right {
-                flex: none;
-                height: 50vh;
+                grid-column: 1 / 2;
             }
 
+            .right {
+                grid-template-rows: repeat(6, minmax(100px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+        <a href="#section4">Section 4</a>
+        <a href="#section5">Section 5</a>
+        <a href="#section6">Section 6</a>
+    </nav>
+    
     <!-- Left Section -->
     <div class="left">
         <p>BIG TEXT THAT SCROLLS INDEPENDENTLY ON THE LEFT SIDE</p>
@@ -175,42 +180,42 @@
 
     <!-- Right Section -->
     <div class="right">
-        <div class="flex-child active">
+        <div id="section1" class="flex-child">
             <div class="column-text">The Photoperiod: Handling and Causing Stress in Plants</div>
             <div class="inner-content">
                 <h1>The Photoperiod: Handling and Causing Stress in Plants</h1>
                 <p>Full content for this section goes here.</p>
             </div>
         </div>
-        <div class="flex-child">
+        <div id="section2" class="flex-child">
             <div class="column-text">List of Plant Archives on the Web</div>
             <div class="inner-content">
                 <h1>List of Plant Archives on the Web</h1>
                 <p>Details about plant archives.</p>
             </div>
         </div>
-        <div class="flex-child">
+        <div id="section3" class="flex-child">
             <div class="column-text">A Brief History of Flowers in Western Art</div>
             <div class="inner-content">
                 <h1>A Brief History of Flowers in Western Art</h1>
                 <p>Details about flowers in Western art history.</p>
             </div>
         </div>
-        <div class="flex-child">
+        <div id="section4" class="flex-child">
             <div class="column-text">Flowers and Their Cultural Influences</div>
             <div class="inner-content">
                 <h1>Flowers and Their Cultural Influences</h1>
                 <p>Details about flowers and cultures worldwide.</p>
             </div>
         </div>
-        <div class="flex-child">
+        <div id="section5" class="flex-child">
             <div class="column-text">10 Artists Celebrating Nature</div>
             <div class="inner-content">
                 <h1>10 Artists Celebrating Nature</h1>
                 <p>Profiles of artists inspired by nature.</p>
             </div>
         </div>
-        <div class="flex-child">
+        <div id="section6" class="flex-child">
             <div class="column-text">Virtual Bouquets to Art</div>
             <div class="inner-content">
                 <h1>Virtual Bouquets to Art</h1>

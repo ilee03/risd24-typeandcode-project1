@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body.style.backgroundColor = '#e0e0f6'; // Original background color for the body
 
             // Reset title and subtitle color to the original
-            title.style.color = '#333'; // Original title color
-            subtitle.style.color = '#333'; // Original subtitle color
+            title.style.color = '#db4d40'; // Original title color
+            subtitle.style.color = '#db4d40'; // Original subtitle color
         }
     });
 });

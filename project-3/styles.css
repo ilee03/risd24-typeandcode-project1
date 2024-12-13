@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'BIZUDP';
+  src: url(./fonts/BIZUDP-Regular.ttf);
+}
+@font-face {
+  font-family: 'Figtree';
+  src: url(./fonts/Figtree.ttf);
+}
+@font-face {
+  font-family: 'Figtree Italic';
+  src: url(./fonts/Figtree-Italic.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,14 +23,6 @@ a, button, img {
   cursor: url(/project-3/images/shovel2.png) 16 50, pointer; 
 }
 
-@font-face {
-  font-family: 'BIZUDP';
-  src: url(./fonts/BIZUDP-Regular.ttf);
-}
-@font-face {
-  font-family: 'Figtree';
-  src: url(./fonts/Figtree.ttf);
-}
 
 .scroll-container {
   /* display: flex; */
@@ -63,6 +68,7 @@ a, button, img {
   z-index: 1000; 
   padding-top: 20px;
 }
+
 #nav-overlay {
   opacity: 0; 
   pointer-events: none; 
@@ -71,7 +77,7 @@ a, button, img {
   right: 20px;
   z-index: 1000;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease; 
 }
@@ -86,20 +92,22 @@ a, button, img {
 }
 
 .nav-links li a {
-  font-family: 'BIZUDP', Arial, sans-serif;
+  font-family: 'Figtree';
   text-decoration: none;
   font-size: 1.5rem;
-  color: #391a1b;
+  color: #db4d40;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #ff7f48;
+  font-family: 'Figtree Italic';
+  text-decoration: underline;
 }
 
 h1 {
   font-size: 9rem; 
-  color: #391a1b;
+  color: #db4d40;
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
   margin: 0;
@@ -131,7 +139,7 @@ h2 {
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
   font-size: 4rem;
-  color: #391a1b;
+  color: #db4d40;
   transition: color 0.5s ease; 
   letter-spacing: -0.1em;
 }
@@ -145,7 +153,7 @@ h3 {
   font-family: 'BIZUDP', Arial, sans-serif;
   font-weight: 400;
   font-size: 1.7rem;
-  color: #391a1b;
+  color: #db4d40;
   transition: color 0.5s ease; 
 }
 
@@ -180,7 +188,7 @@ h3 {
   font-family: 'BIZUDP', Arial, sans-serif;
   font-size: 1.2rem;
   line-height: 1.6; 
-  color: #333;
+  color: #db4d40;
   letter-spacing: -0.05em;
 
 }
@@ -325,6 +333,7 @@ main p, .instructions {
   font-family: 'BIZUDP';
   font-size: 4rem;
   letter-spacing: -0.1em;
+  color: #db4d40;
 
 }
 
