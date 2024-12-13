@@ -487,7 +487,17 @@
 
     <script>
 // Add click event listeners for flex children
-<script>
+const flexChildren = document.querySelectorAll('.flex-child');
+flexChildren.forEach(child => {
+    child.addEventListener('click', () => {
+        flexChildren.forEach(c => {
+            if (c !== child) {
+                c.classList.remove('active');
+            }
+        });
+        child.classList.toggle('active'); // Toggle active state on clicked section
+    });
+});
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', event => {
@@ -505,7 +515,6 @@
             }
         });
     });
-</script>
 
 
     </script>
