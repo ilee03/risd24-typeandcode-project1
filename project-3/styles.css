@@ -15,13 +15,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #e0e0f6;
-  cursor: url(/project-3/images/shovel2.png) 16 50, pointer;
+  cursor: url(/images/shovel2.png) 16 50, pointer;
   width: 100%;
 }
 
-a, button, img {
+/* a, button, img {
   cursor: url(/project-3/images/shovel2.png) 16 50, pointer; 
-}
+} */
 
 
 .scroll-container {
